@@ -1,18 +1,14 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import { MetaMaskProvider } from "metamask-react";
+import {MetaMask} from "./MetaMask";
 
 const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Certus</title>
-      </Head>
-        <p> test </p>
-        <header > Certus </header>
 
-    </div>
-  )
-}
+    return (
+      <MetaMaskProvider>
+          <MetaMask></MetaMask>
+      </MetaMaskProvider>
+  );
+};
 
-export default Home
+export default Home;
