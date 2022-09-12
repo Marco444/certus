@@ -5,6 +5,7 @@ import Moralis from "moralis-v1";
 
 function AppMoralis() {
     const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
+    const nftsData = []
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -33,8 +34,9 @@ function AppMoralis() {
 
         const polygonNFTs = await Moralis.Web3API.account.getNFTs(options);
 
-        for (var nft of polygonNFTs.result) {
-            console.log(nft.name + '\n' + nft.token_address);
+        for (const nft of polygonNFTs.result) {
+            console.log(nft.name + nft.metadata + '\n' + nft.token_address);
+            nftsData.concat(nft.name + nft.metadata + '\n' + nft.token_address);
         }
     }
 
