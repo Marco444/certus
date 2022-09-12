@@ -26,9 +26,10 @@ function AppMoralis() {
         }
         const options = {
             chain: "polygon",
-            address: "0x7303F6d67Ac93bF8AD5882473f71d52F64dE06C9",
+            address: Moralis.User.current().get(),
         };
         const polygonNFTs = await Moralis.Web3API.account.getNFTs(options);
+        console.log(polygonNFTs);
 
         for (var nft of polygonNFTs.result) {
             console.log(nft.name + '\n' + nft.token_address);
