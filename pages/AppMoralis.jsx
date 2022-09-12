@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useMoralis } from "react-moralis";
+import Moralis from "moralis-v1";
 
 function AppMoralis() {
     const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
@@ -16,11 +17,21 @@ function AppMoralis() {
         await authenticate({signingMessage: "Log in using Moralis" })
             .then(function (user) {
                 console.log("logged in user:", user);
-                console.log(user!.get("ethAddress"));
+                console.log(user.get("ethAddress"));
+
             })
             .catch(function (error) {
                 console.log(error);
             });
+        }
+        const options = {
+            chain: "polygon",
+            address: "0x7303F6d67Ac93bF8AD5882473f71d52F64dE06C9",
+        };
+        const polygonNFTs = await Moralis.Web3API.account.getNFTs(options);
+
+        for (var nft of polygonNFTs.result) {
+            console.log(nft.name + '\n' + nft.token_address);
         }
     }
     const logOut = async () => {
