@@ -4,7 +4,7 @@ import { MoralisProvider } from "react-moralis";
 
 const Home: NextPage = () => {
     return (
-        <MoralisProvider serverUrl="https://tlwx9zfwehfu.usemoralis.com:2053/server" appId="NzvHo1OhrnrDrIf1EYSJxA3fy2AZaqaDxYyKAwGr">
+        <MoralisProvider serverUrl="https://ktedylculcwo.usemoralis.com:2053/server" appId="CRpN1JvKz5OgW3XfTGhiXV1RTap72LEVoUjQN2Sk">
             <AppMoralis />
         </MoralisProvider>
   );
