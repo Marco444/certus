@@ -1,13 +1,12 @@
 import type { NextPage } from "next";
-import { MetaMaskProvider } from "metamask-react";
-import {MetaMask} from "./MetaMask";
+import AppMoralis from "./AppMoralis";
+import { MoralisProvider } from "react-moralis";
 
 const Home: NextPage = () => {
-
     return (
-      <MetaMaskProvider>
-          <MetaMask></MetaMask>
-      </MetaMaskProvider>
+        <MoralisProvider serverUrl="https://tlwx9zfwehfu.usemoralis.com:2053/server" appId="NzvHo1OhrnrDrIf1EYSJxA3fy2AZaqaDxYyKAwGr">
+            <AppMoralis />
+        </MoralisProvider>
   );
 };
 
