@@ -52,8 +52,16 @@ function AppMoralis() {
         document.getElementById("user").innerText = "User: Log in first"; 
         document.getElementById("address").innerText = "Address: Log in first"; 
     }
+    const options = {method: 'GET', headers: {Accept: 'application/json', 'X-API-Key': 'test'}};
+    fetch('https://deep-index.moralis.io/api/v2/nft/0x20C0398C33dc3EC68fdAE6cFa4F38edA275532b0/11?chain=mumbai&format=decimal', options)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        document.getElementById("data").innerText = JSON.stringify(response);
+    })
+    .catch(err => console.error(err));
 
-  return (
+    return (
       <div>
           <h1>Moralis Hello World!</h1>
             <button onClick={login}>Moralis Metamask Login</button>
@@ -63,6 +71,7 @@ function AppMoralis() {
                 <h3>Data from wallet:</h3>
                 <p id="user">{user_name}</p>
                 <p id="address">{address}</p>
+                <p id="data"></p>
             </div>
         </div>
     );
