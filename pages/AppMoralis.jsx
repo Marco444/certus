@@ -44,7 +44,7 @@ function AppMoralis() {
         }
         document.getElementById("title").innerText="Logged in!"; 
         const options_wallet = {method: 'GET', headers: {Accept: 'application/json', 'X-API-Key': 'test'}};
-        fetch('https://deep-index.moralis.io/api/v2/nft/0x20C0398C33dc3EC68fdAE6cFa4F38edA275532b0/11?chain=mumbai&format=decimal', options_wallet)
+        fetch('https://deep-index.moralis.io/api/v2/nft/0x20C0398C33dc3EC68fdAE6cFa4F38edA275532b0/12?chain=mumbai&format=decimal', options_wallet)
         .then(response => response.json())
         .then(response => {
             console.log(response);
