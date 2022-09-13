@@ -43,6 +43,14 @@ function AppMoralis() {
             nftsData.concat(nft.name + nft.metadata + '\n' + nft.token_address);
         }
         document.getElementById("title").innerText="Logged in!"; 
+        const options_wallet = {method: 'GET', headers: {Accept: 'application/json', 'X-API-Key': 'test'}};
+        fetch('https://deep-index.moralis.io/api/v2/nft/0x20C0398C33dc3EC68fdAE6cFa4F38edA275532b0/11?chain=mumbai&format=decimal', options_wallet)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            document.getElementById("data").innerText = JSON.stringify(response);
+        })
+        .catch(err => console.error(err));
     }
 
     const logOut = async () => {
@@ -51,15 +59,8 @@ function AppMoralis() {
         document.getElementById("title").innerText="Logged out!"; 
         document.getElementById("user").innerText = "User: Log in first"; 
         document.getElementById("address").innerText = "Address: Log in first"; 
+        document.getElementById("data").innerText = "";
     }
-    const options = {method: 'GET', headers: {Accept: 'application/json', 'X-API-Key': 'test'}};
-    fetch('https://deep-index.moralis.io/api/v2/nft/0x20C0398C33dc3EC68fdAE6cFa4F38edA275532b0/11?chain=mumbai&format=decimal', options)
-    .then(response => response.json())
-    .then(response => {
-        console.log(response);
-        document.getElementById("data").innerText = JSON.stringify(response);
-    })
-    .catch(err => console.error(err));
 
     return (
       <div>
