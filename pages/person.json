@@ -1,0 +1,20 @@
+{ 
+  "person": [
+    {
+      "name": "John",
+      "occupation": "band-member" 
+    },
+    {
+      "name": "Paul",
+      "occupation": "band-member" 
+    },
+    {
+      "name": "George",
+      "occupation": "band-member" 
+    },
+    {
+      "name": "Ringo",
+      "occupation": "band-member" 
+    }
+  ]
+}

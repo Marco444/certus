@@ -10,3 +10,166 @@
 p font-family helvetica {
   font-size: 24px;
 }
+
+.colorfont {
+  color: black;
+  opacity: 0.8;
+}
+
+.colorfont1{
+  color: black;
+  opacity: 0.5;
+}
+.column1 {
+  max-width:100%;
+  align: center;
+  display:inline-block;
+  vertical-align: center;
+  margin-right:10px;
+  margin-left: 4%;
+  margin-top: 1%;
+  justify-content: left;
+}
+
+.nft-features-btn {
+  max-width:100%;
+  width: 75%;
+  height: 40px;
+  background: white;
+  border: 1px solid Gainsboro;
+  border-bottom: none;
+  text-align: right;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  justify-content: space-between;
+}
+
+.last {
+  border: 1px solid Gainsboro;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.nft-image{
+  max-width:100%;
+  height:75%;
+  width:75%
+}
+
+.icons-btn {
+  justify-content: right;
+}
+
+.column2 {
+  max-width:100%;
+  display: flex;
+  flex: column;
+  justify-content: right;
+  align: vertical;
+  margin-top: -49%;
+  margin-right: 10%;
+}
+
+.topbar {
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.icons-bar {
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border: 2px solid Gainsboro;
+  border-radius: 8px;
+  margin-left: 90%;
+} 
+
+.divider {
+  border-left: 2px solid Gainsboro;
+  height: 35px;
+}
+
+.shareicons {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.title {
+  margin-top: 4%;
+  font-size: 30px;
+}
+
+.fixedposition {
+  position: fixed;
+  bottom: 5;
+  left: 38%;
+}
+
+.owned {
+  font-family: Arial, Helvetica, sans-serif;
+  display: fixed;
+  margin-top: 8%;
+  align-items: center;
+}
+
+.link {
+  font-size: 15px;
+  color: DodgerBlue;
+}
+
+.you{
+  margin-left: 76px;
+  margin-top: 17px;
+}
+
+.viewicon {
+  width: 14%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+.align {
+  display: flex;
+  align-items: center;
+}
+
+.align1 {
+  padding: 10px;
+}
+
+.heart {
+  position:relative; 
+  left:670%;
+  color: FireBrick;
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  height: 20%;
+  display: flex;
+}
+
+.col1 {
+  margin-top:11%;
+  width: 75%;
+  height: 10%;
+}
+
+.backarrow {
+  position: absolute;
+}

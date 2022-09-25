@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-//import AppMoralis from "../components/AppMoralis";
-//import { MoralisProvider } from "react-moralis";
-import Landing from "./landing";
+import AppMoralis from "../components/AppMoralis";
+import { MoralisProvider } from "react-moralis";
+import Landing from "./landing"
+import Nft from "./nft"
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +19,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Landing />
-    </>
+    
+        <Nft />
+        </>
   );
 };
 
