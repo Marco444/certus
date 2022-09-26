@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Link from 'next/link';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import LabelIcon from '@mui/icons-material/Label';
 import StarsIcon from '@mui/icons-material/Stars';
@@ -16,6 +17,7 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SellIcon from '@mui/icons-material/Sell';
 import TocIcon from '@mui/icons-material/Toc';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import IconButton from "@mui/material/IconButton";
 
 function Nft(){
 
@@ -27,10 +29,22 @@ function Nft(){
         description.append(newP);
     }
 
+    const route = () => {
+        <a href='http://localhost:3000/'></a>
+    }
+
+    const GobackButton = React.forwardRef(({ onClick, href }, ref) => {
+        return (
+          <a href={'http://localhost:3000/'} onClick={onClick} ref={ref}>
+            <ArrowBackIcon className='backarrow colorfont'/>
+          </a>
+        )
+    })
+
 
     return (
         <div>
-            <ArrowBackIcon className='backarrow colorfont'/>
+            <GobackButton/>
             <div className='column1'>
                 <button id='description-btn' className='nft-features-btn colorfont'>
                     <div className='align'>
