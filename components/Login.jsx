@@ -1,14 +1,7 @@
 import IconButton from "@mui/material/IconButton";
 import Fingerprint from "@mui/icons-material/Fingerprint";
 
-import { useMoralis } from "react-moralis";
-import { useState } from "react";
-
-import Nft from "../pages/nft";
-
-const Login = () => {
-  const { authenticate, isAuthenticated, user } = useMoralis();
-
+const Login = ({ authenticate }) => {
   return (
     <>
       <IconButton
@@ -29,7 +22,6 @@ const Login = () => {
       >
         <Fingerprint sx={{ fontSize: 60 }} />
       </IconButton>
-      {isAuthenticated && <Nft />}
     </>
   );
 };

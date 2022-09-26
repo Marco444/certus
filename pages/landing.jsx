@@ -4,7 +4,7 @@ import Login from "../components/Login";
 import Test from "../components/test";
 import Link from 'next/link';
 
-function Landing() {
+function Landing({authenticateHandler}) {
   return (
     <>
       <Stack style={{ paddingLeft: 333, paddingTop: 300 }} direction="row">
@@ -28,11 +28,8 @@ function Landing() {
             BLOCKCHAIN BACKED AUTHENTICATION
           </div>
         </Stack>
-        <Login />
+        <Login authenticate={authenticateHandler}/>
       </Stack>
-      <button>
-        <Link href="/Nft">Check nft</Link>
-      </button>
     </>
   );
 }
