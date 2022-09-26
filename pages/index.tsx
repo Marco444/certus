@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
-import { MoralisProvider } from "react-moralis";
-import Landing from "./landing";
 import Head from "next/head";
+
+import WebApp from "../components/WebApp";
+
+import { MoralisProvider } from "react-moralis";
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +15,12 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <MoralisProvider
-        serverUrl="https://38zbwija8cju.usemoralis.com:2053/server"
-        appId="cnFCkZdGddgLHdbf502mPivjQDElfxnGmcAoBnyB"
-      >
-        <Landing />
+
+    <MoralisProvider
+      serverUrl="https://fs1dakp51eab.usemoralis.com:2053/server"
+      appId="CMbB476u4cDHZMumKeGfvSItJbutvqhC2PNpgn5j"
+    >
+      <WebApp />
       </MoralisProvider>
     </>
   );
