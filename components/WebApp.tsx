@@ -1,23 +1,28 @@
 import Landing from "../pages/landing";
 
 import { useMoralis } from "react-moralis";
+
+import Nfts from "../pages/nfts";
+
 import { useState } from "react";
 
 import Nft from "../pages/nft";
-import NFTBalances from "./testGetNfts";
-import { Button } from "@mui/material";
-
 const WebApp = () => {
   const { authenticate, isAuthenticated, user, logout } = useMoralis();
+  const [selectedNft, setSelectedNft] = useState(0);
+
+  const logoutWrapper = () => {
+    setSelectedNft(0);
+    logout();
+  };
 
   return (
     <>
       {!isAuthenticated && <Landing authenticateHandler={authenticate} />}
-      {isAuthenticated && (
-        <>
-          <Nft logout={logout} />
-        </>
+      {isAuthenticated && !selectedNft && (
+        <Nfts handler={setSelectedNft} logout={logoutWrapper} />
       )}
+      {selectedNft && isAuthenticated && <Nft logout={logoutWrapper} />}
     </>
   );
 };
