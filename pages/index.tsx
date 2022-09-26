@@ -22,7 +22,6 @@ const Home: NextPage = () => {
       >
         <Landing />
       </MoralisProvider>
-      ,
       {/* }<MetaMaskProvider>
         <Landing />
       </MetaMaskProvider> */}
