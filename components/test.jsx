@@ -7,7 +7,7 @@ const Test = () => {
   if (!isAuthenticated) {
     return (
       <div>
-        <button onClick={() => authenticate()}>Authenticate</button>
+        <button onClick={authenticate}>Authenticate</button>
       </div>
     );
   }

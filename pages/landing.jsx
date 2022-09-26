@@ -6,7 +6,6 @@ import Test from "../components/test";
 function Landing() {
   return (
     <>
-      <Test> </Test> 
       <Stack style={{ paddingLeft: 333, paddingTop: 300 }} direction="row">
         <Stack spacing="2">
           <div
