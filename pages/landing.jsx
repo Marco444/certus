@@ -2,6 +2,7 @@ import { Stack } from "@mui/system";
 
 import Login from "../components/Login";
 import Test from "../components/test";
+import Link from 'next/link';
 
 function Landing() {
   return (
@@ -30,6 +31,9 @@ function Landing() {
         </Stack>
         <Login />
       </Stack>
+      <button>
+        <Link href="/Nft">Check nft</Link>
+      </button>
     </>
   );
 }
