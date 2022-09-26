@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
-import { MoralisProvider } from "react-moralis";
+
 import Landing from "./landing";
 import Head from "next/head";
+
+import { MoralisProvider } from "react-moralis";
+//import { MetaMaskProvider } from "metamask-react";
 
 const Home: NextPage = () => {
   return (
@@ -14,11 +17,15 @@ const Home: NextPage = () => {
         />
       </Head>
       <MoralisProvider
-        serverUrl="https://38zbwija8cju.usemoralis.com:2053/server"
         appId="cnFCkZdGddgLHdbf502mPivjQDElfxnGmcAoBnyB"
+        serverUrl="https://38zbwija8cju.usemoralis.com:2053/server"
       >
         <Landing />
       </MoralisProvider>
+      ,
+      {/* }<MetaMaskProvider>
+        <Landing />
+      </MetaMaskProvider> */}
     </>
   );
 };
