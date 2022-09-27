@@ -2,7 +2,10 @@ import { Stack } from "@mui/system";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
-function Nfts({ handler, logout }) {
+
+import { useMoralis } from "react-moralis";
+
+function Nfts({logout}) {
   return (
     <>
       <div
@@ -47,7 +50,7 @@ function Nfts({ handler, logout }) {
             </Button>
           </Link>
           <Button
-            onClick={logout}
+              onClick={logout}
             sx={{
               ":hover": {
                 color: "#ffffff",

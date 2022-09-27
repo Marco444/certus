@@ -164,7 +164,10 @@ function Nft({logout}) {
         </div>
       </div>
       <GobackButton > </GobackButton>
+      
+    <Link href="/" passHref>
       <Button className="logout" onClick={logout}> LOG OUT </Button>
+    </Link>
       </div>
   );
 }
