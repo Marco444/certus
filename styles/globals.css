@@ -171,7 +171,9 @@ p font-family helvetica {
 }
 
 .backarrow {
-  position: absolute;
+  position: fixed;
+  top: 2%;
+  left: 1%;
 }
 
 .logout {

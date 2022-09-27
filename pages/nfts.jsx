@@ -2,10 +2,15 @@ import { Stack } from "@mui/system";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
+import { useContext } from 'react';
+import UserContext from "../components/userContext";
 
 import { useMoralis } from "react-moralis";
 
-function Nfts({logout}) {
+function Nfts() {
+
+  const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+
   return (
     <>
       <div
@@ -32,7 +37,6 @@ function Nfts({logout}) {
         >
           <Link href="/nft" passHref>
             <Button
-              onClick={() => handler(1)}
               sx={{
                 ":hover": {
                   color: "#ffffff",

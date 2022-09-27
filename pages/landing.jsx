@@ -6,19 +6,20 @@ import Login from "../components/Login";
 
 import { useMoralis } from "react-moralis";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useContext } from 'react';
+import UserContext from "../components/userContext";
 
 
 function Landing() {
 
-  const { authenticate, isAuthenticated, user, logout } = useMoralis();
-  const router = useRouter()
+  const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+  const router = useRouter();
 
-
-  const authenticateHandler = () => {
-    authenticate();
-    if(isAuthenticated)
-        router.push('/nfts');
+  const authenticateHandler = async () => {
+    if(!isAuthenticated)
+      await authenticate();
+      router.push('/nfts');
   }
 
   return (

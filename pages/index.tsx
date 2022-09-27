@@ -16,12 +16,9 @@ const Home: NextPage = () => {
         />
       </Head>
 
-    <MoralisProvider
-      serverUrl="https://fs1dakp51eab.usemoralis.com:2053/server"
-      appId="CMbB476u4cDHZMumKeGfvSItJbutvqhC2PNpgn5j"
-    >
+
       <WebApp />
-      </MoralisProvider>
+     
     </>
   );
 };
