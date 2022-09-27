@@ -4,39 +4,62 @@ import { Button } from "@mui/material";
 function Nfts({ handler, logout }) {
   return (
     <>
-      <Stack
-        style={{
-          margin: 50,
-        }}
-      >
+
         <div
           style={{
             margin: 50,
             fontSize: 133,
-            fontWeight: "bold",
+            fontWeight: "normal",
             fontFamily: "Bebas Neue",
           }}
         >
           MY PRODUCTS:
         </div>
+        <div
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}
+        >
+        <Stack
+            style={{
+                margin: 50,
+            }}
+        >
         <Button
           onClick={() => handler(1)}
           sx={{
             ":hover": {
-              color: "#69f0ae",
-              bgcolor: "#2bbd7e",
+              color: "#ffffff",
+              bgcolor: "#4b4b4b",
             },
-            color: "black",
-            bgcolor: "gray",
-            height: 100,
-            width: 1000,
+              color: "#ffffff",
+            bgcolor: "#1e1e1e",
+            maxHeight: 700,
+            minHeight: 70,
+            maxWidth: 700,
+              minWidth: 300
           }}
         >
-          {" "}
-          VIEW NFT{" "}
+          Adidas Sneaker
         </Button>
-        <Button onClick={logout}> LOG OUT </Button>
+        <Button
+            onClick={logout}
+
+            sx={{
+                ":hover": {
+                    color: "#ffffff",
+                    bgcolor: "#FF4754",
+                },
+                color: "#FF4754",
+                bcolor: "#FF4754",
+                maxHeight: 300,
+                maxWidth: 700,
+            }}
+        > LOG OUT </Button>
       </Stack>
+        </div>
     </>
   );
 }
