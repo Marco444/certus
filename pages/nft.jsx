@@ -43,7 +43,6 @@ function Nft({logout}) {
 
   return (
     <div>
-      <Button onClick={logout}> LOG OUT </Button>
       <div className="column1">
         <button id="description-btn" className="nft-features-btn colorfont">
           <div className="align">
@@ -164,6 +163,7 @@ function Nft({logout}) {
           </button>
         </div>
       </div>
+      <Button className="logout" onClick={logout}> LOG OUT </Button>
       </div>
   );
 }
