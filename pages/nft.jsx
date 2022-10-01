@@ -35,9 +35,9 @@ function Nft({}) {
 
   const GobackButton = React.forwardRef(({ onClick, href }, ref) => {
     return (
-      <a href={"http://localhost:3000/"} onClick={onClick} ref={ref}>
+      <Link href="http://localhost:3000/" >
         <ArrowBackIcon className="backarrow colorfont" />
-      </a>
+      </Link>
     );
   });
 

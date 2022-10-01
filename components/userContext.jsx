@@ -1,11 +1,11 @@
 import { useMoralis } from "react-moralis";
 import { createContext, useState } from 'react';
 
-const UserContext = createContext({});
+const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
 
-  const { authenticate, isAuthenticated, user, logout } = useMoralis();
+  const { isAuthenticated,user, authenticate,  logout } = useMoralis();
 
   return (
     <UserContext.Provider value={[isAuthenticated, authenticate, user,logout]}>

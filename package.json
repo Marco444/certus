@@ -30,13 +30,14 @@
     "metamask-react": "^2.4.0",
     "moralis-v1": "^1.11.0",
     "next": "^12.3.0",
-    "react-icons": "^4.4.0",
-    "react-moralis": "^1.4.2",
-    "rsuite": "^5.19.0",
-    "styled-components": "^5.3.5",
     "react": "~18.0.0",
     "react-dom": "^18.0.0",
-    "react-test-renderer": "^18.0.0"
+    "react-icons": "^4.4.0",
+    "react-moralis": "^1.4.2",
+    "react-test-renderer": "^18.0.0",
+    "reactstrap": "^9.1.4",
+    "rsuite": "^5.19.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "18.7.16",

@@ -6,13 +6,19 @@ import { useContext } from 'react';
 import UserContext from "../components/userContext";
 
 import { useMoralis } from "react-moralis";
+import NftCard from "../components/nftCard";
 
 function Nfts() {
 
-  const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+  const [logout, isAuthenticating] = useContext(UserContext);
+  const logouthandler = () => {
+    console.log("logout");
+    logout();
+  }
 
   return (
     <>
+    {/* <NftCard/> */}
       <div
         style={{
           margin: 50,
@@ -54,7 +60,8 @@ function Nfts() {
             </Button>
           </Link>
           <Button
-              onClick={logout}
+              disabled={isAuthenticating}
+              onClick={logouthandler}
             sx={{
               ":hover": {
                 color: "#ffffff",
