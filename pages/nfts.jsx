@@ -7,6 +7,8 @@ import UserContext from "../components/userContext";
 
 import { useMoralis } from "react-moralis";
 import NftCard from "../components/nftCard";
+import Grid from '@mui/material/Grid';
+import { padding } from "@mui/system";
 
 function Nfts() {
 
@@ -16,13 +18,20 @@ function Nfts() {
     logout();
   }
 
+  const rows = [];
+  for (let i = 0; i < 4; i++) {
+      rows.push(
+          <NftCard/>
+      );
+  }
+
   return (
     <>
     {/* <NftCard/> */}
       <div
         style={{
           margin: 50,
-          fontSize: 133,
+          fontSize: 60,
           fontWeight: "normal",
           fontFamily: "Bebas Neue",
         }}
@@ -36,7 +45,10 @@ function Nfts() {
           justifyContent: "center",
         }}
       >
-        <Stack
+        <Grid container spacing={0.5} className="card-grid">
+            {rows}
+        </Grid>
+        {/* <Stack
           style={{
             margin: 50,
           }}
@@ -76,7 +88,7 @@ function Nfts() {
             {" "}
             LOG OUT{" "}
           </Button>
-        </Stack>
+        </Stack> */}
       </div>
     </>
   );
