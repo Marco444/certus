@@ -9,7 +9,7 @@ function Nfts() {
     useNFTBalances();
 
   const layout = [
-    { i: "a", x: 100, y: 0, w: 3, h: 2, minW: 4, maxW: 4 },
+    { i: "a", x: 100, y: 0, w: 3, h: 2, minW: 4, maxW: 6 },
     { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 4, maxW: 4 },
   ];
 
