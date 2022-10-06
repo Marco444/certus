@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
+
+import { Responsive, WidthProvider } from "react-grid-layout";
 import UserContext from "../components/userContext";
-import GridLayout from "react-grid-layout";
 import { useNFTBalances } from "react-moralis";
 
 function Nfts() {
@@ -8,13 +9,15 @@ function Nfts() {
   const { getNFTBalances, data, error, isLoading, isFetching } =
     useNFTBalances();
 
+  const ResponsiveGridLayout = WidthProvider(Responsive);
+
   const layout = [
-    { i: "a", x: 100, y: 0, w: 3, h: 2, minW: 4, maxW: 6 },
-    { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 4, maxW: 4 },
+    { i: "a", x: 1, y: 0, h: 1, w: 2 },
+    { i: "b", x: 2, y: 0, h: 1, w: 3 },
   ];
 
   const nfts = [
-    { key: "a", name: "test" },
+    { key: {}, name: "test" },
     { key: "b", name: "test" },
   ];
 
@@ -22,15 +25,21 @@ function Nfts() {
     backgroundColor: "darkblue",
   };
 
-  const nftsPreviews = nfts.map((nft) => (
+  const buildNftsPreviews = () => {};
+
+  const nftsComponents = nfts.map((nft) => (
     <div key={nft.key} style={styles}>
       <a> {nft.name}</a>
     </div>
   ));
 
   useEffect(() => {
+    buildNftsPreviews();
+  }, [data]);
+
+  useEffect(() => {
     getNFTBalances();
-  }, []);
+  });
 
   return (
     <>
@@ -44,15 +53,14 @@ function Nfts() {
       >
         MY PRODUCTS
       </div>
-      <GridLayout
-        className="layout"
-        layout={layout}
-        cols={12}
-        rowHeight={30}
-        width={1200}
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+      <ResponsiveGridLayout
+        layouts={{ lg: layout }}
+        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+        cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
       >
-        {nftsPreviews}
-      </GridLayout>
+        {nftsComponents}
+      </ResponsiveGridLayout>
     </>
   );
 }
