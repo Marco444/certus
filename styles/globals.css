@@ -1,3 +1,7 @@
+.react-grid-layout {
+  position: relative;
+}
+
 #set-height {
   display: block;
 }
@@ -16,23 +20,23 @@ p font-family helvetica {
   opacity: 0.8;
 }
 
-.colorfont1{
+.colorfont1 {
   color: black;
   opacity: 0.5;
 }
 .column1 {
-  max-width:100%;
+  max-width: 100%;
   align: center;
-  display:inline-block;
+  display: inline-block;
   vertical-align: center;
-  margin-right:10px;
+  margin-right: 10px;
   margin-left: 4%;
   margin-top: 1%;
   justify-content: left;
 }
 
 .nft-features-btn {
-  max-width:100%;
+  max-width: 100%;
   width: 75%;
   height: 40px;
   background: white;
@@ -54,10 +58,10 @@ p font-family helvetica {
   border-bottom-right-radius: 8px;
 }
 
-.nft-image{
-  max-width:100%;
-  height:75%;
-  width:75%
+.nft-image {
+  max-width: 100%;
+  height: 75%;
+  width: 75%;
 }
 
 .icons-btn {
@@ -65,7 +69,7 @@ p font-family helvetica {
 }
 
 .column2 {
-  max-width:100%;
+  max-width: 100%;
   display: flex;
   flex: column;
   justify-content: right;
@@ -92,7 +96,7 @@ p font-family helvetica {
   border: 2px solid Gainsboro;
   border-radius: 8px;
   margin-left: 90%;
-} 
+}
 
 .divider {
   border-left: 2px solid Gainsboro;
@@ -129,7 +133,7 @@ p font-family helvetica {
   color: DodgerBlue;
 }
 
-.you{
+.you {
   margin-left: 76px;
   margin-top: 17px;
 }
@@ -152,8 +156,8 @@ p font-family helvetica {
 }
 
 .heart {
-  position:relative; 
-  left:670%;
+  position: relative;
+  left: 670%;
   color: FireBrick;
   display: flex;
   align-items: center;
@@ -165,7 +169,7 @@ p font-family helvetica {
 }
 
 .col1 {
-  margin-top:11%;
+  margin-top: 11%;
   width: 75%;
   height: 10%;
 }
