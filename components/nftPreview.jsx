@@ -1,10 +1,17 @@
 import { Stack } from "@mui/material";
+import {router} from "next/client";
 
-function NftPreview({ name }) {
+function NftPreview({ data }) {
+
+    const clickHandler = () => {
+        router.push("/nft");
+    }
+
   return (
     <>
-      <Stack>
-        <span>{{ name }}</span>
+      <Stack onClick={clickHandler}>
+        <span> {data.name} </span>
+          <img src={data.img} />
       </Stack>
     </>
   );
