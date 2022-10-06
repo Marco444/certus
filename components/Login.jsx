@@ -1,7 +1,7 @@
 import IconButton from "@mui/material/IconButton";
 import Fingerprint from "@mui/icons-material/Fingerprint";
 
-const Login = ({ authenticate }) => {
+const Login = ({ authenticate,logout }) => {
   return (
     <>
       <IconButton

@@ -1,8 +1,27 @@
 import { Stack } from "@mui/system";
 
+import { useRouter } from 'next/router'
+
 import Login from "../components/Login";
 
-function Landing({ authenticateHandler }) {
+import { useMoralis } from "react-moralis";
+
+import { useState,useEffect } from "react";
+import { useContext } from 'react';
+import UserContext from "../components/userContext";
+
+
+function Landing() {
+
+  const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+  const router = useRouter();
+
+  const authenticateHandler = async () => {
+    if(!isAuthenticated)
+      await authenticate();
+      router.push('/nfts');
+  }
+
   return (
     <>
       <Stack style={{ paddingLeft: 333, paddingTop: 300 }} direction="row">
@@ -26,7 +45,10 @@ function Landing({ authenticateHandler }) {
             BLOCKCHAIN BACKED AUTHENTICATION
           </div>
         </Stack>
+
+    
         <Login authenticate={authenticateHandler} />
+       
       </Stack>
     </>
   );

@@ -20,7 +20,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import IconButton from "@mui/material/IconButton";
 import { Button } from '@mui/material';
 
-function Nft({logout}) {
+function Nft({}) {
   const handler = () => {
     let newP = document.createElement("p");
     newP.innerHTML = "By you";
@@ -163,7 +163,11 @@ function Nft({logout}) {
           </button>
         </div>
       </div>
+      <GobackButton > </GobackButton>
+      
+    {/* <Link href="/" passHref>
       <Button className="logout" onClick={logout}> LOG OUT </Button>
+    </Link> */}
       </div>
   );
 }
