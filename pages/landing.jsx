@@ -1,26 +1,23 @@
 import { Stack } from "@mui/system";
 
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 import Login from "../components/Login";
 
 import { useMoralis } from "react-moralis";
 
-import { useState,useEffect } from "react";
-import { useContext } from 'react';
+import { useState, useEffect } from "react";
+import { useContext } from "react";
 import UserContext from "../components/userContext";
 
-
 function Landing() {
-
   const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
   const router = useRouter();
 
   const authenticateHandler = async () => {
-    if(!isAuthenticated)
-      await authenticate();
-      router.push('/nfts');
-  }
+    await authenticate();
+    router.push("/nfts");
+  };
 
   return (
     <>
@@ -46,9 +43,7 @@ function Landing() {
           </div>
         </Stack>
 
-    
         <Login authenticate={authenticateHandler} />
-       
       </Stack>
     </>
   );
