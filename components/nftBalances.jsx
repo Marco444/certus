@@ -8,11 +8,13 @@ const NFTBalances = () => {
 
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
 
-  // useEffect(() => getNFTBalances());
-  //
-  // useEffect(() => {
-  //   setNftBalance(JSON.stringify(data, null, 2));
-  // }, [data]);
+  useEffect(() => {
+    getNFTBalances();
+  }, []);
+
+  useEffect(() => {
+    setNftBalance(data);
+  }, [data]);
 
   return <div></div>;
 };
