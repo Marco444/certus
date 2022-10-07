@@ -7,9 +7,7 @@ import { router } from "next/client";
 import NftPreview from "../components/nftPreview";
 import { Button } from "@mui/material";
 import NFTBalances from "../components/nftBalances";
-import { Button } from "@mui/material";
-import { MoralisProvider } from "react-moralis";
-import Web3 from "web3";
+
 
 function Nfts() {
   const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
