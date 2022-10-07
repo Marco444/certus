@@ -1,26 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-
-import { Responsive, WidthProvider } from "react-grid-layout";
 import UserContext from "../components/userContext";
-import { useNFTBalances } from "react-moralis";
-import { router } from "next/client";
-import NftPreview from "../components/nftPreview";
-import { Button } from "@mui/material";
 import NFTBalances from "../components/nftBalances";
-
-import { useMoralis } from "react-moralis";
 import NftCard from "../components/nftCard";
-import {Grid, Row} from '@mui/material';
-import { padding } from "@mui/system";
-import { HorizontalSplitRounded } from "@mui/icons-material";
 
 function Nfts() {
 
   const [logout, isAuthenticating] = useContext(UserContext);
-  const logouthandler = () => {
-    console.log("logout");
-    logout();
-  }
 
   const rows = [];
   for (let i = 0; i < 3; i++) {
@@ -43,8 +28,6 @@ function Nfts() {
         MY PRODUCTS
       </div>
       <NFTBalances />
-      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
-
         {/* <Grid container spacing={0.5} className="card-grid">
             {rows}
         </Grid> */}
@@ -53,7 +36,12 @@ function Nfts() {
           <NftCard/> */}
           {rows}
         </div>
-        {/* <Stack
+    </>
+  );
+}
+
+export default Nfts;
+{/* <Stack
           style={{
             margin: 50,
           }}
@@ -94,9 +82,3 @@ function Nfts() {
             LOG OUT{" "}
           </Button>
         </Stack> */}
-      </div>
-    </>
-  );
-}
-
-export default Nfts;
