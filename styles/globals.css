@@ -182,39 +182,32 @@ p font-family helvetica {
   right: 2%;
 }
 
-:root {
-  font-size: 16px;
-  --card-img-height: 200px;
-}
 .card-container {
   width: 20%;
-  height: 10%;
-  display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   border: 1px solid #BFBFBF;
   background-color: white;
   box-shadow: 10px 10px 5px #aaaaaa;
+  margin-left:4%;
 }
 
 .card {
   align-self: flex-start;
-  position: relative;
   margin: 0.75rem 0.75rem;
   background: white;
-  transition: all 300ms ease-in-out;
 }
 
 .card-title {
   font-size: 150%;
 }
 
-.card-grid {
-  display: absolute;
-  padding: 50px;
-}
-
 .card-element {
   text-align: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
 }

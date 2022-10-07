@@ -7,8 +7,9 @@ import UserContext from "../components/userContext";
 
 import { useMoralis } from "react-moralis";
 import NftCard from "../components/nftCard";
-import Grid from '@mui/material/Grid';
+import {Grid, Row} from '@mui/material';
 import { padding } from "@mui/system";
+import { HorizontalSplitRounded } from "@mui/icons-material";
 
 function Nfts() {
 
@@ -19,7 +20,7 @@ function Nfts() {
   }
 
   const rows = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
       rows.push(
           <NftCard/>
       );
@@ -45,9 +46,14 @@ function Nfts() {
           justifyContent: "center",
         }}
       >
-        <Grid container spacing={0.5} className="card-grid">
+        {/* <Grid container spacing={0.5} className="card-grid">
             {rows}
-        </Grid>
+        </Grid> */}
+        <div className="cards">
+          {/* <NftCard/>
+          <NftCard/> */}
+          {rows}
+        </div>
         {/* <Stack
           style={{
             margin: 50,
