@@ -7,6 +7,9 @@ import { router } from "next/client";
 import NftPreview from "../components/nftPreview";
 import { Button } from "@mui/material";
 import NFTBalances from "../components/nftBalances";
+import { Button } from "@mui/material";
+import { MoralisProvider } from "react-moralis";
+import Web3 from "web3";
 
 function Nfts() {
   const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
@@ -28,11 +31,18 @@ function Nfts() {
     router.push("/nft").then((r) => {});
   };
 
-  // const nftsComponents = balances.map((nft) => (
-  //   <div>
-  //     <NftPreview data={nft} />
-  //   </div>
-  // ));
+      const nftsComponents = nfts.map((nft) => (
+        <div key={nft.key}>
+          <NftPreview data={nft} />
+        </div>
+      ));
+
+    const logouthandler = async() => {
+      console.log(isAuthenticated);
+      await logout();
+      router.replace("http://localhost:3000/");
+      console.log(isAuthenticated);
+    }
 
   // useEffect(() => {
   //   getNFTBalances();
@@ -52,6 +62,31 @@ function Nfts() {
       </div>
       <NFTBalances />
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+      <ResponsiveGridLayout
+
+        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+        cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
+      >
+        {nftsComponents}
+      </ResponsiveGridLayout>
+      <Button
+              onClick={logouthandler}
+            sx={{
+              ":hover": {
+                color: "#ffffff",
+                bgcolor: "#FF4754",
+              },
+              color: "#FF4754",
+              bcolor: "#FF4754",
+              maxHeight: 300,
+              maxWidth: 700,
+              position: "fixed",
+              bottom: "0"
+            }}
+          >
+            {" "}
+            LOG OUT{" "}
+        </Button>
     </>
   );
 }
