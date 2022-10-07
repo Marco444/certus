@@ -82,8 +82,7 @@ function Nfts() {
               bottom: "0"
             }}
           >
-            {" "}
-            LOG OUT{" "}
+            LOG OUT
         </Button>
     </>
   );
