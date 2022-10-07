@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import LabelIcon from "@mui/icons-material/Label";
 import StarsIcon from "@mui/icons-material/Stars";
@@ -19,27 +18,13 @@ import TocIcon from "@mui/icons-material/Toc";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import IconButton from "@mui/material/IconButton";
 import { Button } from '@mui/material';
+import {router} from "next/client";
 
 function Nft({}) {
-  const handler = () => {
-    let newP = document.createElement("p");
-    newP.innerHTML = "By you";
-    newP.style = "none";
-    const description = document.getElementById("description-btn");
-    description.append(newP);
-  };
 
-  const route = () => {
-    <a href="http://localhost:3000/"></a>;
-  };
-
-  const GobackButton = React.forwardRef(({ onClick, href }, ref) => {
-    return (
-      <Link href="http://localhost:3000/" >
-        <ArrowBackIcon className="backarrow colorfont" />
-      </Link>
-    );
-  });
+  const backHandler = () => {
+    router.push("/nfts").then(r => {});
+  }
 
   return (
     <div>
@@ -163,9 +148,10 @@ function Nft({}) {
           </button>
         </div>
       </div>
-      <GobackButton > </GobackButton>
-      
-    {/* <Link href="/" passHref>
+      <ArrowBackIcon onClick={backHandler} className="backarrow colorfont" />
+
+
+      {/* <Link href="/" passHref>
       <Button className="logout" onClick={logout}> LOG OUT </Button>
     </Link> */}
       </div>

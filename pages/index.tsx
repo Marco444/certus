@@ -16,9 +16,7 @@ const Home: NextPage = () => {
         />
       </Head>
 
-
       <WebApp />
-     
     </>
   );
 };

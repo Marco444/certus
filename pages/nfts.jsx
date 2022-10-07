@@ -1,9 +1,12 @@
-import { Stack } from "@mui/system";
-import { Button } from "@mui/material";
-import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
 
-import { useContext } from 'react';
+import { Responsive, WidthProvider } from "react-grid-layout";
 import UserContext from "../components/userContext";
+import { useNFTBalances } from "react-moralis";
+import { router } from "next/client";
+import NftPreview from "../components/nftPreview";
+import { Button } from "@mui/material";
+import NFTBalances from "../components/nftBalances";
 
 import { useMoralis } from "react-moralis";
 import NftCard from "../components/nftCard";
@@ -37,15 +40,11 @@ function Nfts() {
           fontFamily: "Bebas Neue",
         }}
       >
-        MY PRODUCTS:
+        MY PRODUCTS
       </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <NFTBalances />
+      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+
         {/* <Grid container spacing={0.5} className="card-grid">
             {rows}
         </Grid> */}
