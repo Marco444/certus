@@ -1,15 +1,20 @@
 import { useNFTBalances } from "react-moralis";
+import { useContext, useEffect } from "react";
+import NftBalanceContext from "../components/nftBalancesContext";
 
 const NFTBalances = () => {
+  const { getNFTBalances, data, error, isLoading, isFetching } =
+    useNFTBalances();
 
-const { getNFTBalances, data, error, isLoading, isFetching } = useNFTBalances();
-  return (
-    <div>
-      {error && <>{JSON.stringify(error)}</>}
-      <button onClick={() => getNFTBalances({ params: { chain: "0x1" } })}>Refetch NFTBalances</button>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  );
+  const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
+
+  useEffect(()=> getNFTBalances()); 
+
+  useEffect(() => {
+    setNftBalance(JSON.stringify(data, null, 2));
+  }, [data]);
+
+  return <div></div>;
 };
 
 export default NFTBalances;

@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import { UserProvider } from "../components/userContext";
+import { NftBalanceProvider } from "../components/nftBalancesContext";
 import { MoralisProvider } from "react-moralis";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,7 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       appId="ZCbbNH3Gop15IRPio3BTR5nGHI4Jc5yeXLKMUG9N"
     >
       <UserProvider>
-        <Component {...pageProps} />
+        <NftBalanceProvider>
+          <Component {...pageProps} />
+        </NftBalanceProvider>
       </UserProvider>
     </MoralisProvider>
   );

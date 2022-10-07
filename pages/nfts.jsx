@@ -1,22 +1,26 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
+import { useContext } from "react";
 import UserContext from "../components/userContext";
+import NftBalanceContext from "../components/nftBalancesContext";
+
 import NFTBalances from "../components/nftBalances";
 import NftCard from "../components/nftCard";
 
 function Nfts() {
-
   const [logout, isAuthenticating] = useContext(UserContext);
+
+  const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
 
   const rows = [];
   for (let i = 0; i < 3; i++) {
-      rows.push(
-          <NftCard/>
-      );
+    rows.push(<NftCard />);
   }
 
+  console.log(nftBalance);
   return (
     <>
-    {/* <NftCard/> */}
+      {/* <NftCard/> */}
       <div
         style={{
           margin: 50,
@@ -28,20 +32,22 @@ function Nfts() {
         MY PRODUCTS
       </div>
       <NFTBalances />
-        {/* <Grid container spacing={0.5} className="card-grid">
+      <pre> {JSON.stringify(nftBalance)}</pre>
+      {/* <Grid container spacing={0.5} className="card-grid">
             {rows}
         </Grid> */}
-        <div className="cards">
-          {/* <NftCard/>
+      <div className="cards">
+        {/* <NftCard/>
           <NftCard/> */}
-          {rows}
-        </div>
+        {rows}
+      </div>
     </>
   );
 }
 
 export default Nfts;
-{/* <Stack
+{
+  /* <Stack
           style={{
             margin: 50,
           }}
@@ -81,4 +87,5 @@ export default Nfts;
             {" "}
             LOG OUT{" "}
           </Button>
-        </Stack> */}
+        </Stack> */
+}
