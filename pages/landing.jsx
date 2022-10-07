@@ -20,6 +20,8 @@ function Landing() {
     if(!isAuthenticated)
       await authenticate();
       router.push('/nfts');
+    // await authenticate();
+    // router.push('/nfts');
   }
 
   return (

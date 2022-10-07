@@ -5,6 +5,9 @@ import UserContext from "../components/userContext";
 import { useNFTBalances } from "react-moralis";
 import {router} from "next/client";
 import NftPreview from "../components/nftPreview";
+import { Button } from "@mui/material";
+import { MoralisProvider } from "react-moralis";
+import Web3 from "web3"; 
 
 function Nfts() {
   const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
@@ -31,6 +34,13 @@ function Nfts() {
           <NftPreview data={nft} />
         </div>
       ));
+    
+    const logouthandler = async() => {
+      console.log(isAuthenticated);
+      await logout();
+      router.replace("http://localhost:3000/");
+      console.log(isAuthenticated);
+    }
 
   // useEffect(() => {
   //   getNFTBalances();
@@ -56,6 +66,24 @@ function Nfts() {
       >
         {nftsComponents}
       </ResponsiveGridLayout>
+      <Button
+              onClick={logouthandler}
+            sx={{
+              ":hover": {
+                color: "#ffffff",
+                bgcolor: "#FF4754",
+              },
+              color: "#FF4754",
+              bcolor: "#FF4754",
+              maxHeight: 300,
+              maxWidth: 700,
+              position: "fixed",
+              bottom: "0"
+            }}
+          >
+            {" "}
+            LOG OUT{" "}
+        </Button>
     </>
   );
 }
