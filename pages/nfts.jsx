@@ -12,7 +12,7 @@ function Nfts() {
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
   const [nfts, setNfts] = useState([]);
 
-  const updateIpfsAddresses = () => {
+  const storeNfts = () => {
     if (
       nftBalance === undefined ||
       nftBalance === null ||
@@ -20,22 +20,21 @@ function Nfts() {
       nftBalance.result === undefined
     )
       return null;
-    console.log("updatingNfts");
-    console.log(nftBalance);
-    setNfts(
-      nftBalance.result.map((res) => {
-        <NftCard metadata={res.metadata} />;
-      })
-    );
+    setNfts(nftBalance.result);
   };
 
   useEffect(() => {
-    updateIpfsAddresses(nftBalance);
+    console.log("cards updated!");
+    console.log(nfts);
+  }, [nfts]);
+
+  useEffect(() => {
+    storeNfts(nftBalance);
   }, [nftBalance]);
 
   return (
     <>
-      {/* <NftCard/> */}
+      <NFTBalances />
       <div
         style={{
           margin: 50,
@@ -46,14 +45,11 @@ function Nfts() {
       >
         MY PRODUCTS
       </div>
-      <NFTBalances />
-      {/* <Grid container spacing={0.5} className="card-grid">
-            {nfts}
-        </Grid> */}
-      <div className="cards">
-        {/* <NftCard/>
-          <NftCard/> */}
-        {nfts}
+      <div>
+        {console.log("loading nfts!")}
+        {nfts.map(function (res) {
+          return <NftCard key={res.token_hash} metadata={res} />;
+        })}
       </div>
     </>
   );

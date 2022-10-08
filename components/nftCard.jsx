@@ -9,12 +9,12 @@ function NftCard({ metadata }) {
     <>
       <div className="card-container">
         <div className="card">
-          <Image
-            className="image"
-            src={"/images/shoe.png"}
-            height={1300}
-            width={1300}
-          />
+          {/* <Image */}
+          {/*   className="image" */}
+          {/*   src={"https://ipfs.io/ipfs/" + metadata.image} */}
+          {/*   height={1300} */}
+          {/*   width={1300} */}
+          {/* /> */}
           <div className="card-info">
             <h1 className="card-title">Black and White #1</h1>
             <div className="card-creator">
