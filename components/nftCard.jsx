@@ -22,9 +22,13 @@ function NftCard({ metadata }) {
             width="130"
           />
           <div className="card-info">
-            <h1 className="card-title">Black and White #1</h1>
+            <h1 className="card-title">
+              {metadata.metadata === null ? null : metadata.metadata.name}
+            </h1>
             <div className="card-creator">
-              Created by <a href="">you</a>
+              {metadata.metadata === null
+                ? null
+                : metadata.metadata.description}
             </div>
           </div>
         </div>

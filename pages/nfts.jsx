@@ -24,11 +24,6 @@ function Nfts() {
   };
 
   useEffect(() => {
-    console.log("cards updated!");
-    console.log(nfts);
-  }, [nfts]);
-
-  useEffect(() => {
     storeNfts(nftBalance);
   }, [nftBalance]);
 
@@ -46,7 +41,6 @@ function Nfts() {
         MY PRODUCTS
       </div>
       <div>
-        {console.log("loading nfts!")}
         {nfts.map(function (res) {
           return <NftCard key={res.token_hash} metadata={res} />;
         })}
