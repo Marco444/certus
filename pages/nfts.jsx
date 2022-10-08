@@ -9,15 +9,30 @@ import NftCard from "../components/nftCard";
 
 function Nfts() {
   const [logout, isAuthenticating] = useContext(UserContext);
-
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
+  const [nfts, setNfts] = useState([]);
 
-  const rows = [];
-  for (let i = 0; i < 3; i++) {
-    rows.push(<NftCard />);
-  }
+  const updateIpfsAddresses = () => {
+    if (
+      nftBalance === undefined ||
+      nftBalance === null ||
+      nftBalance.result === null ||
+      nftBalance.result === undefined
+    )
+      return null;
+    console.log("updatingNfts");
+    console.log(nftBalance);
+    setNfts(
+      nftBalance.result.map((res) => {
+        <NftCard metadata={res.metadata} />;
+      })
+    );
+  };
 
-  console.log(nftBalance);
+  useEffect(() => {
+    updateIpfsAddresses(nftBalance);
+  }, [nftBalance]);
+
   return (
     <>
       {/* <NftCard/> */}
@@ -32,14 +47,13 @@ function Nfts() {
         MY PRODUCTS
       </div>
       <NFTBalances />
-      <pre> {JSON.stringify(nftBalance)}</pre>
       {/* <Grid container spacing={0.5} className="card-grid">
-            {rows}
+            {nfts}
         </Grid> */}
       <div className="cards">
         {/* <NftCard/>
           <NftCard/> */}
-        {rows}
+        {nfts}
       </div>
     </>
   );
