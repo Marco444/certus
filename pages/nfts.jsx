@@ -30,17 +30,10 @@ function Nfts() {
   return (
     <>
       <NFTBalances />
-      <div
-        style={{
-          margin: 50,
-          fontSize: 60,
-          fontWeight: "normal",
-          fontFamily: "Bebas Neue",
-        }}
-      >
+      <div className="myProducts">
         MY PRODUCTS
       </div>
-      <div>
+      <div className="cards">
         {nfts.map(function (res) {
           return <NftCard key={res.token_hash} metadata={res} />;
         })}

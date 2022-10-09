@@ -11,15 +11,19 @@ function NftCard({ metadata }) {
     router.push("/nft");
   };
 
+  // console.log(metadata.image);
+
+  // let imageLink = ""
+
+  console.log(metadata.image.slice(29));
+
   return (
     <>
       <div onClick={handleClick} className="card-container">
         <div className="card">
           <img
-            className="image"
-            src={"https://ipfs.io/ipfs/" + metadata.image}
-            height="130"
-            width="130"
+            className="card-image"
+            src={"https://ipfs.io/ipfs/" + metadata.image.slice(29)}
           />
           <div className="card-info">
             <h1 className="card-title">

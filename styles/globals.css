@@ -211,3 +211,14 @@ p font-family helvetica {
 .cards {
   display: flex;
 }
+
+.myProducts {
+  margin: 2%;
+  font-size: 250%;
+  font-weight: normal;
+  font-family: Bebas Neue
+}
+
+.card-image{
+  width: 100%;
+}
