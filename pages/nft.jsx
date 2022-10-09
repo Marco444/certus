@@ -19,12 +19,16 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import IconButton from "@mui/material/IconButton";
 import { Button } from '@mui/material';
 import {router} from "next/client";
+import {useContext} from "react";
+import selectedNftContext from "../components/selectedNftContext";
 
 function Nft({}) {
 
   const backHandler = () => {
     router.push("/nfts").then(r => {});
   }
+
+  const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   return (
     <div>
@@ -101,7 +105,7 @@ function Nft({}) {
             <MoreVertIcon className="shareicons" />
           </div>
         </div>
-        <h2 className="title fixedposition colorfont">Black and White #1</h2>
+        <h2 className="title fixedposition colorfont">{selectedNft.metadata.name}</h2>
         <div className="owned">
           <p className="fixedposition colorfont1">Owned by</p>
           <p className="link fixedposition you">you</p>
@@ -130,7 +134,7 @@ function Nft({}) {
           <button className="nft-features-btn last">
             <div className="align">
               <SellIcon />
-              <div className="align1">Listings</div>
+              <div className="align1"></div>
             </div>
             <div className="arrow">
               <KeyboardArrowDownIcon />

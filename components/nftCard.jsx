@@ -3,19 +3,26 @@ import { Stack } from "@mui/system";
 import Link from "next/link";
 import Image from "next/image";
 import { router } from "next/router";
+import {useContext} from "react";
+import NftBalanceContext from "./nftBalancesContext";
+import selectedNftContext from "./selectedNftContext";
 
 function NftCard({ metadata }) {
-  console.log(metadata);
+
+
+  const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   const handleClick = () => {
+    console.log(metadata);
+    setSelectedNft(metadata);
     router.push("/nft");
   };
+
+
 
   // console.log(metadata.image);
 
   // let imageLink = ""
-
-  console.log(metadata.image.slice(29));
 
   return (
     <>
