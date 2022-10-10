@@ -16,21 +16,19 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import SellIcon from "@mui/icons-material/Sell";
 import TocIcon from "@mui/icons-material/Toc";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import IconButton from "@mui/material/IconButton";
-import { Button } from '@mui/material';
-import {router} from "next/client";
-import {useContext} from "react";
+import { router } from "next/client";
+import { useContext } from "react";
 import selectedNftContext from "../components/selectedNftContext";
 
 function Nft({}) {
-
   const backHandler = () => {
-    router.push("/nfts").then(r => {});
-  }
+    router.push("/nfts");
+  };
+
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   console.log(selectedNft);
-  
+
   const metadata = selectedNft.metadata;
 
   return (
@@ -39,13 +37,13 @@ function Nft({}) {
         <button id="description-btn" className="nft-features-btn colorfont">
           <div className="align">
             <InsertLinkIcon />
-            <FavoriteIcon className="heart"/>
+            <FavoriteIcon className="heart" />
           </div>
         </button>
         <div>
-        <img
+          <img
             className="nft-image"
-            src={"https://ipfs.io/ipfs/" + metadata.image.slice(7)}
+            src={"https://ipfs.io/ipfs/" + metadata.image}
           />
         </div>
         <button id="description-btn" className="nft-features-btn colorfont">
@@ -152,7 +150,7 @@ function Nft({}) {
         </div>
       </div>
       <ArrowBackIcon onClick={backHandler} className="backarrow colorfont" />
-      </div>
+    </div>
   );
 }
 

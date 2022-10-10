@@ -28,17 +28,17 @@ function Landing() {
 
   return (
     <>
-    <Stack className="header" direction="row" spacing={4}>
-      <Button className="btn-landing font colorfont" onClick={routeHome}>
-        Home
-      </Button>
-      <Button className="btn-landing font colorfont" onClick={routeAbout}>
-        About us
-      </Button>
-      <Button className="btn-landing font colorfont" onClick={routeHow}>
-        How it works
-      </Button>
-    </Stack>
+    {/* <Stack className="header" direction="row" spacing={4}> */}
+    {/*   <Button className="btn-landing font colorfont" onClick={routeHome}> */}
+    {/*     Home */}
+    {/*   </Button> */}
+    {/*   <Button className="btn-landing font colorfont" onClick={routeAbout}> */}
+    {/*     About us */}
+    {/*   </Button> */}
+    {/*   <Button className="btn-landing font colorfont" onClick={routeHow}> */}
+    {/*     How it works */}
+    {/*   </Button> */}
+    {/* </Stack> */}
       <Stack className="landing" direction="row" spacing={10}>
         <Stack spacing={2}>
           <div className="title-landing font">

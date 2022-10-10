@@ -27,7 +27,7 @@ function NftCard({ metadata }) {
         <div className="card">
           <img
             className="card-image"
-            src={"https://ipfs.io/ipfs/" + metadata.image.slice(29)}
+            src={"https://ipfs.io/ipfs/" + metadata.image}
           />
           <div className="card-info">
             <h1 className="card-title">

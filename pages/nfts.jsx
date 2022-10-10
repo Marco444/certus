@@ -42,7 +42,8 @@ function Nfts() {
       </div>
       <div className="cards">
         {nfts.map(function (res) {
-          return <NftCard key={res.token_hash} metadata={res} />;
+          if(res.metadata != null)
+            return <NftCard key={res.token_hash} metadata={res} />;
         })}
       </div>
       <Button onClick={logouthandler} className="logout-btn">
