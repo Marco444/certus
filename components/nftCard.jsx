@@ -18,8 +18,6 @@ function NftCard({ metadata }) {
     router.push("/nft");
   };
 
-
-
   // console.log(metadata.image);
   return (
     <>
@@ -33,7 +31,7 @@ function NftCard({ metadata }) {
             <h1 className="card-title">
               {metadata.metadata === null ? null : metadata.metadata.name}
             </h1>
-            <div className="card-creator">
+            <div>
               {metadata.metadata === null
                 ? null
                 : metadata.metadata.description}
