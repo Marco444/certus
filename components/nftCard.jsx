@@ -23,7 +23,7 @@ function NftCard({ metadata }) {
   // console.log(metadata.image);
   return (
     <>
-      <div onClick={handleClick} className="card-container">
+      <div onClick={handleClick} className="card-container" style={{width: 300}}>
         <div className="card">
           <img
             className="card-image"

@@ -7,13 +7,17 @@ import NftBalanceContext from "../components/nftBalancesContext";
 import NFTBalances from "../components/nftBalances";
 import NftCard from "../components/nftCard";
 
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { router } from "next/router";
+import { Stack } from "@mui/system";
+
+import { useMediaQuery } from 'react-responsive'
 
 function Nfts() {
   const [logout, isAuthenticating] = useContext(UserContext);
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
   const [nfts, setNfts] = useState([]);
+  const isMobile = useMediaQuery({ maxWidth: 767 })
 
   const storeNfts = () => {
     if (
@@ -40,12 +44,15 @@ function Nfts() {
       <div className="myProducts font">
         MY PRODUCTS
       </div>
-      <div className="cards">
+      <Grid container spacing={5} >
         {nfts.map(function (res) {
           if(res.metadata != null)
-            return <NftCard key={res.token_hash} metadata={res} />;
+            return (
+              <Grid item>
+              <NftCard key={res.token_hash} metadata={res} />
+ </Grid>);
         })}
-      </div>
+      </Grid>
       <Button onClick={logouthandler} className="logout-btn">
         {" "}
         LOG OUT{" "}
