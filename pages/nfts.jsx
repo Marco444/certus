@@ -40,23 +40,23 @@ function Nfts() {
 
   return (
     <>
-      <NFTBalances />
-      <div className="myProducts font">
-        MY PRODUCTS
-      </div>
-      <Grid container spacing={5} >
-        {nfts.map(function (res) {
-          if(res.metadata != null)
-            return (
-              <Grid item>
-              <NftCard key={res.token_hash} metadata={res} />
- </Grid>);
-        })}
-      </Grid>
-      <Button onClick={logouthandler} className="logout-btn">
-        {" "}
-        LOG OUT{" "}
-      </Button>
+    <NFTBalances />
+    <div className="myProducts font">
+    MY PRODUCTS
+    </div>
+    <Grid container spacing={5} >
+    {nfts.map(function (res) {
+      if(res.metadata != null)
+        return (
+          <Grid item>
+          <NftCard key={res.token_hash} metadata={res} />
+          </Grid>);
+    })}
+    </Grid>
+    <Button onClick={logouthandler} className="logout-btn">
+    {" "}
+    LOG OUT{" "}
+    </Button>
     </>
   );
 }

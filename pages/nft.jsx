@@ -21,6 +21,7 @@ import { useContext } from "react";
 import selectedNftContext from "../components/selectedNftContext";
 
 function Nft({}) {
+
   const backHandler = () => {
     router.push("/nfts");
   };
