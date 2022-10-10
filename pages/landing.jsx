@@ -21,29 +21,16 @@ function Landing() {
 
   return (
     <>
-      <Stack style={{ paddingLeft: 333, paddingTop: 300 }} direction="row">
-        <Stack spacing="2">
-          <div
-            style={{
-              fontSize: 133,
-              fontWeight: "bold",
-              fontFamily: "Bebas Neue",
-            }}
-          >
+      <Stack className="landing" direction="row" spacing={10}>
+        <Stack spacing={2}>
+          <div className="title-landing font">
             CERTUS
           </div>
-          <div
-            style={{
-              fontSize: 40,
-              fontWeight: "bold",
-              fontFamily: "Bebas Neue",
-            }}
-          >
+          <div className="description-landing font">
             BLOCKCHAIN BACKED AUTHENTICATION
           </div>
         </Stack>
-
-        <Login authenticate={authenticateHandler} />
+        <Login className="fingerprint-landing" authenticate={authenticateHandler} />
       </Stack>
     </>
   );

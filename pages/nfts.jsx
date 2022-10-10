@@ -37,7 +37,7 @@ function Nfts() {
   return (
     <>
       <NFTBalances />
-      <div className="myProducts">
+      <div className="myProducts font">
         MY PRODUCTS
       </div>
       <div className="cards">
@@ -45,7 +45,7 @@ function Nfts() {
           return <NftCard key={res.token_hash} metadata={res} />;
         })}
       </div>
-      <Button onClick={logouthandler} className="logout-btn ">
+      <Button onClick={logouthandler} className="logout-btn">
         {" "}
         LOG OUT{" "}
       </Button>
