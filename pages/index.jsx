@@ -1,3 +1,4 @@
+
 import { Stack } from "@mui/system";
 import { useRouter } from "next/router";
 import Login from "../components/Login";
@@ -5,7 +6,10 @@ import { useContext } from "react";
 import UserContext from "../components/userContext";
 import { Button } from "@mui/material";
 
-function Landing() {
+
+
+const Home = () => {
+
   const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
   const router = useRouter();
 
@@ -52,6 +56,6 @@ function Landing() {
       </Stack>
     </>
   );
-}
+};
 
-export default Landing;
+export default Home;

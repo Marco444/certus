@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import LabelIcon from "@mui/icons-material/Label";
 import StarsIcon from "@mui/icons-material/Stars";
@@ -16,11 +15,13 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import SellIcon from "@mui/icons-material/Sell";
 import TocIcon from "@mui/icons-material/Toc";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
 import { router } from "next/client";
 import { useContext } from "react";
+
 import selectedNftContext from "../components/selectedNftContext";
 
-function Nft({}) {
+function Nft() {
 
   const backHandler = () => {
     router.push("/nfts");
@@ -28,7 +29,6 @@ function Nft({}) {
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
-  console.log(selectedNft);
 
   const metadata = selectedNft.metadata;
 
