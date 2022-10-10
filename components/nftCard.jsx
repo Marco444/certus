@@ -19,7 +19,12 @@ function NftCard({ metadata }) {
   };
 
   const image_split = metadata.image.split('/');
-  const image = image_split.at(-2)+'/'+image_split.at(-1);
+  let image = "";
+  if(image_split.length > 1){
+    image = image_split.at(-2)+'/'+image_split.at(-1);
+  } else {
+    image = metadata.image;
+  }
 
   console.log(image);
   return (

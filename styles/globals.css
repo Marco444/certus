@@ -27,7 +27,7 @@ p font-family helvetica {
   opacity: 0.5;
 }
 .column1 {
-  max-width:100%;
+  max-width: 100%;
   align: center;
   display:inline-block;
   vertical-align: center;
@@ -239,12 +239,6 @@ p font-family helvetica {
 .card-title {
   font-size: 150%;
 }
-
-/* .logout {
-  position: fixed;
-  bottom: 2%;
-  right: 2%;
-} */
 
 .card-container {
   width: 22%;
