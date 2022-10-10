@@ -27,7 +27,6 @@ function Nft({}) {
   const backHandler = () => {
     router.push("/nfts").then(r => {});
   }
-
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   return (

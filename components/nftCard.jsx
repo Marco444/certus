@@ -21,9 +21,6 @@ function NftCard({ metadata }) {
 
 
   // console.log(metadata.image);
-
-  // let imageLink = ""
-
   return (
     <>
       <div onClick={handleClick} className="card-container">
