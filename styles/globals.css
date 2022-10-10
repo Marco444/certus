@@ -26,14 +26,14 @@ p font-family helvetica {
   display:inline-block;
   vertical-align: center;
   margin-right:10px;
-  margin-left: 4%;
+  margin-left: 6%;
   margin-top: 1%;
   justify-content: left;
 }
 
 .nft-features-btn {
   max-width:100%;
-  width: 75%;
+  width: 80%;
   height: 40px;
   background: white;
   border: 1px solid Gainsboro;
@@ -56,8 +56,9 @@ p font-family helvetica {
 
 .nft-image{
   max-width:100%;
-  height:75%;
-  width:75%
+  height:80%;
+  width:80%;
+  border: 8px;
 }
 
 .icons-btn {
@@ -70,7 +71,7 @@ p font-family helvetica {
   flex: column;
   justify-content: right;
   align: vertical;
-  margin-top: -49%;
+  margin-top: -45%;
   margin-right: 10%;
 }
 
@@ -153,10 +154,16 @@ p font-family helvetica {
 
 .heart {
   position:relative; 
-  left:670%;
-  color: FireBrick;
+  left:720%;
   display: flex;
   align-items: center;
+  color: black;
+  opacity: 0.5;
+}
+
+.heart:hover {
+  color: FireBrick;
+  opacity: 1;
 }
 
 .description {

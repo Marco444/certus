@@ -29,29 +29,29 @@ function Nft({}) {
   }
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
+  console.log(selectedNft);
+  
+  const metadata = selectedNft.metadata;
+
   return (
     <div>
       <div className="column1">
         <button id="description-btn" className="nft-features-btn colorfont">
           <div className="align">
             <InsertLinkIcon />
-            <div className="heart">
-              <p>1</p>
-              <FavoriteIcon />
-            </div>
+            <FavoriteIcon className="heart"/>
           </div>
         </button>
         <div>
-          <img className="nft-image" src={"images/shoe.png"} />
+        <img
+            className="nft-image"
+            src={"https://ipfs.io/ipfs/" + metadata.image.slice(7)}
+          />
         </div>
         <button id="description-btn" className="nft-features-btn colorfont">
           <div className="align">
             <DehazeIcon />
             <div className="align1">Description</div>
-            {/* <div>
-                            <p>By <b>you</b></p>
-                            <p className='description'>ADIDAS Women’s Cloudfoam Racer</p>
-                        </div> */}
           </div>
         </button>
         <button id="properties-btn" className="nft-features-btn colorfont">
@@ -104,7 +104,7 @@ function Nft({}) {
             <MoreVertIcon className="shareicons" />
           </div>
         </div>
-        <h2 className="title fixedposition colorfont">{selectedNft.metadata.name}</h2>
+        <h2 className="title fixedposition colorfont">{metadata.name}</h2>
         <div className="owned">
           <p className="fixedposition colorfont1">Owned by</p>
           <p className="link fixedposition you">you</p>
@@ -152,11 +152,6 @@ function Nft({}) {
         </div>
       </div>
       <ArrowBackIcon onClick={backHandler} className="backarrow colorfont" />
-
-
-      {/* <Link href="/" passHref>
-      <Button className="logout" onClick={logout}> LOG OUT </Button>
-    </Link> */}
       </div>
   );
 }
