@@ -22,13 +22,11 @@ import { useContext } from "react";
 import selectedNftContext from "../components/selectedNftContext";
 
 function Nft() {
-
   const backHandler = () => {
     router.push("/nfts");
   };
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
-
 
   const metadata = selectedNft.metadata;
 
@@ -41,7 +39,7 @@ function Nft() {
             <FavoriteIcon className="heart" />
           </div>
         </button>
-        <div>
+        <div style={{ width: 500 }}>
           <img
             className="nft-image"
             src={"https://ipfs.io/ipfs/" + metadata.image}
