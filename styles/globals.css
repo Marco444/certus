@@ -22,23 +22,23 @@ p font-family helvetica {
   opacity: 0.8;
 }
 
-.colorfont1 {
+.colorfont1{
   color: black;
   opacity: 0.5;
 }
 .column1 {
   max-width: 100%;
   align: center;
-  display: inline-block;
+  display:inline-block;
   vertical-align: center;
-  margin-right: 10px;
+  margin-right:10px;
   margin-left: 6%;
   margin-top: 1%;
   justify-content: left;
 }
 
 .nft-features-btn {
-  max-width: 100%;
+  max-width:100%;
   width: 80%;
   height: 40px;
   background: white;
@@ -60,11 +60,25 @@ p font-family helvetica {
   border-bottom-right-radius: 8px;
 }
 
-.nft-image {
-  max-width: 100%;
-  height: 80%;
-  width: 80%;
+.nft-image{
+  max-width:100%;
+  height:80%;
+  width:80%;
   border: 8px;
+}
+
+.selectednft-image{
+  max-width:100%;
+  height:20em;
+  width:20em;
+  border: 8px;
+  margin-left:2%;
+}
+
+.selectednft-image-desc{
+  margin:2%;
+  font-size: 150%;
+  font-weight: normal;
 }
 
 .icons-btn {
@@ -72,7 +86,7 @@ p font-family helvetica {
 }
 
 .column2 {
-  max-width: 100%;
+  max-width:100%;
   display: flex;
   flex: column;
   justify-content: right;
@@ -99,7 +113,7 @@ p font-family helvetica {
   border: 2px solid Gainsboro;
   border-radius: 8px;
   margin-left: 90%;
-}
+} 
 
 .divider {
   border-left: 2px solid Gainsboro;
@@ -136,7 +150,7 @@ p font-family helvetica {
   color: DodgerBlue;
 }
 
-.you {
+.you{
   margin-left: 76px;
   margin-top: 17px;
 }
@@ -159,8 +173,8 @@ p font-family helvetica {
 }
 
 .heart {
-  position: relative;
-  left: 720%;
+  position:relative; 
+  left:720%;
   display: flex;
   align-items: center;
   color: black;
@@ -178,7 +192,7 @@ p font-family helvetica {
 }
 
 .col1 {
-  margin-top: 11%;
+  margin-top:11%;
   width: 75%;
   height: 10%;
 }
@@ -192,8 +206,7 @@ p font-family helvetica {
 /* nfts */
 
 .myProducts {
-  font-family: "Bebas Neue";
-  margin: 2%;
+  margin: 4% 2% 2%;
   font-size: 280%;
   font-weight: normal;
 }
@@ -220,8 +233,7 @@ p font-family helvetica {
   background-color: #f44336;
   color: white;
   border: 2px solid #f44336;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* nft card */
@@ -232,7 +244,7 @@ p font-family helvetica {
   background: white;
 }
 
-.card-image {
+.card-image{
   width: 100%;
   border-top-left-radius: 6%;
   border-top-right-radius: 6%;
@@ -242,21 +254,15 @@ p font-family helvetica {
   font-size: 150%;
 }
 
-/* .logout {
-  position: fixed;
-  bottom: 2%;
-  right: 2%;
-} */
-
 .card-container {
   width: 22%;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #BFBFBF;
   background-color: white;
   box-shadow: 10px 10px 5px #aaaaaa;
-  margin-left: 4%;
+  margin-left:4%;
   border-radius: 6%;
 }
 
@@ -277,17 +283,16 @@ p font-family helvetica {
 }
 
 .title-landing {
-  font-family: "Bebas Neue";
   color: #000000;
   font-size: 500%;
 }
 
 .description-landing {
-  font-family: "Bebas Neue";
   font-size: 200%;
 }
 
 .fingerprint-landing {
+
 }
 
 .header {
@@ -296,14 +301,19 @@ p font-family helvetica {
   overflow: hidden;
 }
 
-.btn-landing {
+.btn-landing{
   font-size: 18px;
   text-decoration: underline;
 }
 
-.btn-landing:hover {
+.btn-landing:hover{
   font-size: 18px;
   background-color: lightgrey;
+}
+
+.onPage{
+  background-color: lightgrey;
+  text-decoration: none;
 }
 
 /* about us */
@@ -318,30 +328,36 @@ p font-family helvetica {
   line-height: 1.8;
 }
 
-.howitworks {
+.link {
   text-decoration: underline;
   color: blue;
 }
 
-.aboutus-title {
+.aboutus-title{
   font-size: 70px;
   margin-top: 3%;
   margin-left: 5%;
 }
 
-.us-title {
+.us-title{
   font-size: 50px;
   margin-top: 3%;
   margin-left: 5%;
 }
 
-.us {
+.us{
   margin-top: 2%;
   margin-left: 10%;
 }
 
-.gayba {
-  margin-left: 58%;
+.gayba{
+  align: center;
+}
+
+.logo {
+  width: 18%;
+  height: 18%;
+  border-radius: 50%;
 }
 
 /* profile */
@@ -349,15 +365,35 @@ p font-family helvetica {
   width: 18%;
 }
 
-.profile-img {
+.profile-img{
   width: 100%;
-  margin-top: 2%;
+  margin-top:2%;
+  margin-bottom:-2.4%;
   border-bottom-right-radius: 6%;
   border-bottom-left-radius: 6%;
 }
 
-.profile-title {
+.profile-title{
   font-size: 20px;
   text-align: center;
   margin-top: 2%;
 }
+
+/* how it works */
+
+.login-btn {
+  border: none;
+  background-color: white;
+}
+
+.howitworks {
+  width: 70%;
+  text-align: justify;
+  text-justify: inter-word;
+  display: block;
+  margin-left: 16%;
+  margin-top: 4%;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
