@@ -15,6 +15,7 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import SellIcon from "@mui/icons-material/Sell";
 import TocIcon from "@mui/icons-material/Toc";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import {spacing} from "@mui/system";
 
 import { router } from "next/client";
 import { useContext } from "react";
@@ -45,10 +46,15 @@ function Nft() {
 
   return (
     <div>
-      <h1>{metadata.name}</h1>
-      <img src={"https://ipfs.io/ipfs/" + image} width="200" height="200"></img>
-      <p>{metadata.description}</p>
-      <p>token_hash: {selectedNft.token_hash}</p>
+        <div >
+            <ArrowBackIcon onClick={backHandler} className="backarrow colorfont"/>
+        </div>
+        <div>
+            <h1 className="myProducts font">{metadata.name}</h1>
+            <img src={"https://ipfs.io/ipfs/" + image} className="selectednft-image" ></img>
+            <p className="selectednft-image-desc">{metadata.description}</p>
+            <p className="selectednft-image-desc">token_hash: {selectedNft.token_hash}</p>
+        </div>
     </div>
   );
 }
