@@ -36,14 +36,14 @@ const Home = () => {
       </Stack>
       <Stack className="landing" direction="row" spacing={10}>
         <Stack spacing={2}>
-          <div className="title-landing font">
+          <div className="title-landing font colorfont1">
             CERTUS
           </div>
-          <div className="description-landing font">
+          <div className="description-landing font colorfont1">
             BLOCKCHAIN BACKED AUTHENTICATION
           </div>
         </Stack>
-        <Login className="fingerprint-landing" />
+        <Login className="fingerprint-landing colorfont1"/>
       </Stack>
     </>
   );
