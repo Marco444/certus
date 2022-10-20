@@ -18,14 +18,13 @@ p font-family helvetica {
 /* nft */
 
 .colorfont {
-  color: black;
-  opacity: 0.8;
+  color: #010913;
 }
 
 .colorfont1{
-  color: black;
-  opacity: 0.5;
+  color: #041d3d;
 }
+
 .column1 {
   max-width: 100%;
   align: center;
@@ -177,7 +176,7 @@ p font-family helvetica {
   left:720%;
   display: flex;
   align-items: center;
-  color: black;
+  color: #041d3d;
   opacity: 0.5;
 }
 
@@ -283,7 +282,7 @@ p font-family helvetica {
 }
 
 .title-landing {
-  color: #000000;
+  color: #041d3d;
   font-size: 500%;
 }
 
@@ -308,11 +307,11 @@ p font-family helvetica {
 
 .btn-landing:hover{
   font-size: 18px;
-  background-color: lightgrey;
+  background-color: #11e3ab;
 }
 
 .onPage{
-  background-color: lightgrey;
+  background-color: #11e3ab;
   text-decoration: none;
 }
 

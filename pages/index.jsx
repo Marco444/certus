@@ -5,17 +5,13 @@ import Login from "../components/Login";
 import { useContext } from "react";
 import UserContext from "../components/userContext";
 import { Button } from "@mui/material";
+import LoginForm from "../components/LoginForm"
 
 
 const Home = () => {
 
-  const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+  const [isAuthenticated, authenticate, user, logout, userAddress, setUserAddress] = useContext(UserContext);
   const router = useRouter();
-
-  const authenticateHandler = async () => {
-    await authenticate();
-    router.push("/nfts");
-  };
 
   const routeAbout = () => {
     router.push("/AboutUs");
@@ -40,14 +36,14 @@ const Home = () => {
       </Stack>
       <Stack className="landing" direction="row" spacing={10}>
         <Stack spacing={2}>
-          <div className="title-landing font">
+          <div className="title-landing font colorfont1">
             CERTUS
           </div>
-          <div className="description-landing font">
+          <div className="description-landing font colorfont1">
             BLOCKCHAIN BACKED AUTHENTICATION
           </div>
         </Stack>
-        <Login className="fingerprint-landing" authenticate={authenticateHandler} />
+        <Login className="fingerprint-landing colorfont1"/>
       </Stack>
     </>
   );
