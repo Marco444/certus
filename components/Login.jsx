@@ -41,8 +41,7 @@ const Login = ({ authenticate,logout }) => {
             open={showModal}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-        >
+            aria-describedby="modal-modal-description">
             <LoginForm></LoginForm>
         </Modal>
     </>
