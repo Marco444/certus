@@ -5,17 +5,13 @@ import Login from "../components/Login";
 import { useContext } from "react";
 import UserContext from "../components/userContext";
 import { Button } from "@mui/material";
+import LoginForm from "../components/LoginForm"
 
 
 const Home = () => {
 
-  const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+  const [isAuthenticated, authenticate, user, logout, userAddress, setUserAddress] = useContext(UserContext);
   const router = useRouter();
-
-  const authenticateHandler = async () => {
-    await authenticate();
-    router.push("/nfts");
-  };
 
   const routeAbout = () => {
     router.push("/AboutUs");
@@ -47,7 +43,7 @@ const Home = () => {
             BLOCKCHAIN BACKED AUTHENTICATION
           </div>
         </Stack>
-        <Login className="fingerprint-landing" authenticate={authenticateHandler} />
+        <Login className="fingerprint-landing" />
       </Stack>
     </>
   );
