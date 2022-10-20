@@ -59,5 +59,8 @@
 //   );
 // }
 //
-// export default Nft;
+function Nft() {
+    return <div></div>
+}
+ export default  Nft;
 
