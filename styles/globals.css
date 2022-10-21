@@ -303,6 +303,8 @@ p font-family helvetica {
 .btn-landing{
   font-size: 18px;
   text-decoration: underline;
+  color: #010913;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .btn-landing:hover{
