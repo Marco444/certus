@@ -7,6 +7,9 @@ const NFTBalances = () => {
   const { getNFTBalances, data } =
     useNFTBalances();
 
+  //aca si se borra todos los cosas se ROMPE, es por el hecho de ser
+  //un array destructuring. Si es feo, se tiene que restructurar el
+  //useContext
   const [
     isAuthenticated,
     authenticate,

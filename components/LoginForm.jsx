@@ -93,13 +93,12 @@ export default function LoginForm() {
         <Button sx={buttonSx} onClick={handleLogin}>
           Authorize
         </Button>
-        <Button sx={{...buttonSx, marginTop: 2, marginLeft: 2}}>
-          <Image
-            src="/../public/images/metamask.jpg"
+        <Button onClick={handleMetamask} sx={{...buttonSx, marginTop: 2, marginLeft: 2}}>
+          <img
+            src="/metamask.jpg"
             alt="metamask"
             height="50"
             width="50"
-            onClick={handleMetamask}
           />
         </Button>
       </Stack>
