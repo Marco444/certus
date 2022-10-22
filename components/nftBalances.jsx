@@ -10,13 +10,13 @@ const NFTBalances = () => {
   const [userAddress, setUserAddress] = useContext(UserContext);
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
 
-  useEffect(() => {
-    if (userAddress == "") {
+  useEffect ( () => {
+    if (userAddress === "") {
       getNFTBalances();
     } else {
       getNFTBalances({
         params: {
-          address: userAddress,
+          address: "0xb046fc99362136e8d232382302559A7d350cb0D9",
           chain: "mumbai",
         },
       });

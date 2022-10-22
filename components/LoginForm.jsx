@@ -17,9 +17,11 @@ export default function LoginForm() {
 
   const buttonSx = {
     color: "#11e3ab",
+    border: 1,
     marginTop: 2,
     marginLeft: 1,
     marginRight: 1,
+    borderRadius: 5,
   };
 
   const [
@@ -79,17 +81,18 @@ export default function LoginForm() {
         margin: "auto",
         marginTop: 40,
         backgroundColor: "white",
+        fontFamily: "Bebas Neue"
       }}
     >
-      <p> Email </p>
-      <TextField value={email} onChange={handleEmail} />
-      <p> Password </p>
-      <TextField value={password} onChange={handlePassword} />
+
+      <h1 > Access Certus</h1>
+      <TextField sx={{marginBottom: 3}} label="Email" value={email} onChange={handleEmail} />
+      <TextField sx={{marginBottom: 3}} label="Password" value={password} onChange={handlePassword} />
       <Stack direction="row" sx={{ justifyContent: "center" }}>
         <Button sx={buttonSx} onClick={handleLogin}>
           Authorize
         </Button>
-        <div>
+        <Button sx={{...buttonSx, marginTop: 2, marginLeft: 2}}>
           <Image
             src="/../public/images/metamask.jpg"
             alt="metamask"
@@ -97,7 +100,7 @@ export default function LoginForm() {
             width="50"
             onClick={handleMetamask}
           />
-        </div>
+        </Button>
       </Stack>
     </Stack>
   );
