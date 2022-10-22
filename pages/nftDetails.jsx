@@ -3,7 +3,7 @@ import {router} from "next/router";
 import {useContext} from "react";
 import selectedNftContext from "../components/selectedNftContext";
 
-function nftDetails() {
+function NftDetails() {
 
 
   const backHandler = () => {
@@ -40,4 +40,4 @@ function nftDetails() {
   );
 }
 
-export default nftDetails;
+export default NftDetails;
