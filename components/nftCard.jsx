@@ -15,7 +15,7 @@ function NftCard({ metadata }) {
   const handleClick = () => {
     console.log(metadata);
     setSelectedNft(metadata);
-   // router.push("/nft");
+    router.push("/nftDetails");
   };
 
   const image_split = metadata.image.split('/');
