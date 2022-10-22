@@ -5,6 +5,7 @@ import selectedNftContext from "../components/selectedNftContext";
 
 function NftDetails() {
 
+
   const backHandler = () => {
     router.push("/nfts");
   };
