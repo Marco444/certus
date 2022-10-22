@@ -5,23 +5,13 @@ import selectedNftContext from "../components/selectedNftContext";
 
 function NftDetails() {
 
-
   const backHandler = () => {
     router.push("/nfts");
   };
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
-  const metadata = selectedNft.metadata;
-  const image_split = metadata.image.split('/');
-  let image = "";
-
-  if(image_split.length > 1){
-    image = image_split.at(-2)+'/'+image_split.at(-1);
-  } else {
-    image = metadata.image;
-  }
-
+  const image = "";
   console.log(metadata);
   console.log(image);
 

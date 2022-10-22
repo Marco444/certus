@@ -11,8 +11,8 @@ import Image from "next/image";
 
 export default function LoginForm() {
   const customNodeOptions = {
-    rpcUrl: "",
-    chainId: "mumbai",
+    rpcUrl: "https://rpc-mumbai.maticvigil.com/",
+    chainId: "8001",
   };
 
   const buttonSx = {
@@ -41,7 +41,7 @@ export default function LoginForm() {
     setEmail(e.target.value);
   };
 
-  const handlePassword = () => {
+  const handlePassword = (e) => {
     setPassword(e.target.value);
   };
 
@@ -49,8 +49,9 @@ export default function LoginForm() {
     await authenticate();
     if (isAuthenticated) router.push("./nfts");
   };
+
   const handleLogin = async () => {
-    if (email == "" || password == "") return;
+    if (email === "" ) return;
 
     const magic = new Magic("pk_live_23C0853E32B9B729", {
       network: customNodeOptions,
@@ -87,7 +88,7 @@ export default function LoginForm() {
 
       <h1 > Access Certus</h1>
       <TextField sx={{marginBottom: 3}} label="Email" value={email} onChange={handleEmail} />
-      <TextField sx={{marginBottom: 3}} label="Password" value={password} onChange={handlePassword} />
+      {/*<TextField sx={{marginBottom: 3}} label="Password" value={password} onChange={handlePassword} />*/}
       <Stack direction="row" sx={{ justifyContent: "center" }}>
         <Button sx={buttonSx} onClick={handleLogin}>
           Authorize

@@ -4,24 +4,25 @@ import NftBalanceContext from "../components/nftBalancesContext";
 import UserContext from "./userContext";
 
 const NFTBalances = () => {
-  const { getNFTBalances, data, error, isLoading, isFetching } =
+  const { getNFTBalances, data } =
     useNFTBalances();
 
-  const [userAddress, setUserAddress] = useContext(UserContext);
+  const [
+    isAuthenticated,
+    authenticate,
+    user,
+    logout,
+    userAddress,
+    setUserAddress,
+  ] = useContext(UserContext);
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
 
-  useEffect ( () => {
-    if (userAddress === "") {
-      getNFTBalances();
-    } else {
-      getNFTBalances({
-        params: {
-          address: "0xb046fc99362136e8d232382302559A7d350cb0D9",
-          chain: "mumbai",
-        },
-      });
-    }
-  }, []);
+  useEffect (  () => {
+    getNFTBalances({
+      params: {address: userAddress, chain: "mumbai"}
+    })
+
+  }, [userAddress]);
 
   useEffect(() => {
     setNftBalance(data);
