@@ -1,54 +1,104 @@
-import { Magic } from 'magic-sdk';
+import { Magic } from "magic-sdk";
 
 import Web3 from "web3";
-import {ethers} from "ethers";
-import {useContext} from "react";
+import { ethers } from "ethers";
+import { useContext, useState } from "react";
 import UserContext from "./userContext";
-import {router} from "next/router";
-import {Box} from "@mui/system";
+import { router } from "next/router";
+import { Box, Stack } from "@mui/system";
+import { Button, TextField } from "@mui/material";
+import Image from "next/image";
 
 export default function LoginForm() {
-    const customNodeOptions = {
-        rpcUrl: "", // 🦄 Custom RPC Endpoint
-        chainId: "",
-    };
+  const customNodeOptions = {
+    rpcUrl: "",
+    chainId: "mumbai",
+  };
 
-    const [isAuthenticated, authenticate, user, logout, userAddress, setUserAddress] = useContext(UserContext);
+  const buttonSx = {
+    color: "#11e3ab",
+    marginTop: 2,
+    marginLeft: 1,
+    marginRight: 1,
+  };
 
-    const handleSignIn = async (e) => {
-        e.preventDefault();
+  const [
+    isAuthenticated,
+    authenticate,
+    user,
+    logout,
+    userAddress,
+    setUserAddress,
+  ] = useContext(UserContext);
 
-        const { elements } = e.target;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signUp, setSignUp] = useState(false);
 
-        const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUB_KEY, {
-            network: customNodeOptions,
-        });
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
-        const didToken = await magic.auth.loginWithMagicLink({
-            email: elements.email.value,
-        });
-        // 🌐 Send didToken to your backend API
+  const handlePassword = () => {
+    setPassword(e.target.value);
+  };
 
-        const provider = new ethers.providers.Web3Provider(magic.rpcProvider);
+  const handleMetamask = async () => {
+    await authenticate();
+    if (isAuthenticated) router.push("./nfts");
+  };
+  const handleLogin = async () => {
+    if (email == "" || password == "") return;
 
-        const signer = provider.getSigner();
+    const magic = new Magic("pk_live_23C0853E32B9B729", {
+      network: customNodeOptions,
+    });
 
-        const address = await signer.getAddress();
+    const didToken = await magic.auth.loginWithMagicLink({
+      email: email,
+    });
 
-        console.log(address);
+    const provider = new ethers.providers.Web3Provider(magic.rpcProvider);
 
-        setUserAddress(address);
+    const signer = provider.getSigner();
 
-        router.push("./nfts");
+    const address = await signer.getAddress();
 
+    console.log(address);
 
-        // router.push(`/dashboard`); 👈 Redirect to certain pages
-    };
-    return (
-        <form onSubmit={handleSignIn}>
-            <label htmlFor="email">Email</label>
-            <input name="email" type="email" />
-            <button>Log in</button>
-        </form>
-    );
+    setUserAddress(address);
+
+    router.push("./nfts");
+  };
+  return (
+    <Stack
+      sx={{
+        borderRadius: 5,
+        padding: 5,
+        width: 300,
+        margin: "auto",
+        marginTop: 40,
+        backgroundColor: "white",
+      }}
+    >
+      <p> Email </p>
+      <TextField value={email} onChange={handleEmail} />
+      <p> Password </p>
+      <TextField value={password} onChange={handlePassword} />
+      <Stack direction="row" sx={{ justifyContent: "center" }}>
+        <Button sx={buttonSx} onClick={handleLogin}>
+          Authorize
+        </Button>
+        <div>
+          <Image
+            src="/../public/images/metamask.jpg"
+            alt="metamask"
+            height="50"
+            width="50"
+            onClick={handleMetamask}
+          />
+        </div>
+      </Stack>
+    </Stack>
+  );
 }
