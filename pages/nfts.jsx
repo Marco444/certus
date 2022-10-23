@@ -6,7 +6,7 @@ import NftBalanceContext from "../components/nftBalancesContext";
 
 import NFTBalances from "../components/nftBalances";
 import NftCard from "../components/nftCard";
-
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { Button, Grid } from "@mui/material";
 import { router } from "next/router";
 import { Stack } from "@mui/system";
@@ -14,11 +14,18 @@ import { Stack } from "@mui/system";
 import { useMediaQuery } from 'react-responsive'
 
 function Nfts() {
-  const [logout, isAuthenticating] = useContext(UserContext);
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
   const [nfts, setNfts] = useState([]);
   const isMobile = useMediaQuery({ maxWidth: 767 })
 
+    const [
+        isAuthenticated,
+        authenticate,
+        user,
+        logout,
+        userAddress,
+        setUserAddress,
+    ] = useContext(UserContext);
   const storeNfts = () => {
     if (
         nftBalance === undefined ||
@@ -38,26 +45,33 @@ function Nfts() {
     router.push("./");
   }
 
+
+
   return (
       <>
-        <NFTBalances />
-        <div className="myProducts font">
-          MY PRODUCTS
-        </div>
-        <Grid container spacing={5} >
-          {nfts.map(function (res) {
-            if(res.metadata != null)
-              return (
-                  <Grid item>
-                    <NftCard key={res.token_hash} metadata={res} />
-                  </Grid>
-              );
-          })}
-        </Grid>
-        <Button onClick={logouthandler} className="logout-btn">
-          {" "}
-          LOG OUT{" "}
-        </Button>
+          <NFTBalances />
+          <Stack sx={{padding: 2, margin: 3}} spacing={4} direction={"row"} >
+              <div style={{fontFamily: "Bebas Neue", fontSize: 50}}>
+                  MY PRODUCTS
+              </div>
+              <Button startIcon={<ContentCopyIcon />} onClick={() => navigator.clipboard.writeText(userAddress)}>
+                  copy wallet address
+              </Button>
+          </Stack>
+          <Grid container spacing={5} >
+              {nfts.map(function (res) {
+                  if(res.metadata != null)
+                      return (
+                          <Grid item>
+                              <NftCard key={res.token_hash} metadata={res} />
+                          </Grid>
+                      );
+              })}
+          </Grid>
+          <Button onClick={logouthandler} className="logout-btn">
+              {" "}
+              LOG OUT{" "}
+          </Button>
       </>
   );
 }

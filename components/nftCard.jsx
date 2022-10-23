@@ -13,7 +13,6 @@ function NftCard({ metadata }) {
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   const handleClick = () => {
-    console.log(metadata);
     setSelectedNft(metadata);
     router.push("/nftDetails");
   };
@@ -26,7 +25,6 @@ function NftCard({ metadata }) {
     image = metadata.image;
   }
 
-  console.log(image);
   return (
     <>
       <div onClick={handleClick} className="card-container" style={{width: 300}}>

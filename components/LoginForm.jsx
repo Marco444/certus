@@ -31,6 +31,7 @@ export default function LoginForm() {
     logout,
     userAddress,
     setUserAddress,
+    account
   ] = useContext(UserContext);
 
   const [email, setEmail] = useState("");
@@ -47,7 +48,10 @@ export default function LoginForm() {
 
   const handleMetamask = async () => {
     await authenticate();
-    if (isAuthenticated) router.push("./nfts");
+    if (isAuthenticated) {
+      setUserAddress(user.attributes.accounts[0]);
+      router.push("./nfts");
+    }
   };
 
   const handleLogin = async () => {
@@ -67,8 +71,6 @@ export default function LoginForm() {
 
     const address = await signer.getAddress();
 
-    console.log(address);
-
     setUserAddress(address);
 
     router.push("./nfts");
@@ -78,17 +80,15 @@ export default function LoginForm() {
       sx={{
         borderRadius: 5,
         padding: 5,
-        width: 300,
         margin: "auto",
-        marginTop: 40,
         backgroundColor: "white",
         fontFamily: "Bebas Neue"
       }}
+      style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}
     >
 
       <h1 > Access Certus</h1>
       <TextField sx={{marginBottom: 3}} label="Email" value={email} onChange={handleEmail} />
-      {/*<TextField sx={{marginBottom: 3}} label="Password" value={password} onChange={handlePassword} />*/}
       <Stack direction="row" sx={{ justifyContent: "center" }}>
         <Button sx={buttonSx} onClick={handleLogin}>
           Authorize

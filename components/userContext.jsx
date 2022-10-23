@@ -5,11 +5,11 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
 
-  const { isAuthenticated,user, authenticate,  logout } = useMoralis();
+  const { isAuthenticated,user, authenticate,  logout, account } = useMoralis();
   const [userAddress, setUserAddress] = useState("");
 
   return (
-    <UserContext.Provider value={[isAuthenticated, authenticate, user,logout, userAddress, setUserAddress]}>
+    <UserContext.Provider value={[isAuthenticated, authenticate, user,logout, userAddress, setUserAddress, account]}>
       {children}
     </UserContext.Provider>
   );
