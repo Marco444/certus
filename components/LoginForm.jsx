@@ -48,7 +48,7 @@ export default function LoginForm() {
 
   const handleMetamask = async () => {
     await authenticate();
-    if (isAuthenticated) {
+    if (isAuthenticated && user !== null) {
       setUserAddress(user.attributes.accounts[0]);
       router.push("./nfts");
     }
@@ -91,7 +91,7 @@ export default function LoginForm() {
       <TextField sx={{marginBottom: 3}} label="Email" value={email} onChange={handleEmail} />
       <Stack direction="row" sx={{ justifyContent: "center" }}>
         <Button sx={buttonSx} onClick={handleLogin}>
-          Authorize
+          Create Wallet
         </Button>
         <Button onClick={handleMetamask} sx={{...buttonSx, marginTop: 2, marginLeft: 2}}>
           <img

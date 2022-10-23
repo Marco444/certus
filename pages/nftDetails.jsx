@@ -12,12 +12,13 @@ function NftDetails() {
   // const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
   //
   // const image = "";
-  // console.log(metadata);
+  // const metadata = selectedNft.metadata;
+  // console.log(selectedNft.metadata);
   // console.log(image);
   //
   // return (
   //   <div>
-  //       <div >
+  //       <div>
   //           <ArrowBackIcon onClick={backHandler} className="backarrow colorfont"/>
   //       </div>
   //       <div>
