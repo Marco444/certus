@@ -73,6 +73,8 @@ export default function LoginForm() {
 
     setUserAddress(address);
 
+    console.log(address);
+
     router.push("./nfts");
   };
   return (
