@@ -12,8 +12,7 @@ function NftDetails() {
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   const image = "";
-  const metadata = selectedNft.metadata;
-  console.log(selectedNft.metadata);
+  console.log(selectedNft);
   console.log(image);
 
   return (
@@ -22,9 +21,9 @@ function NftDetails() {
             <ArrowBackIcon onClick={backHandler} className="backarrow colorfont"/>
         </div>
         <div>
-            <h1 className="myProducts font">{metadata.name}</h1>
+            <h1 className="myProducts font">{selectedNft.name}</h1>
             <img src={"https://ipfs.io/ipfs/" + image} className="selectednft-image" ></img>
-            <p className="selectednft-image-desc">{metadata.description}</p>
+            <p className="selectednft-image-desc">{selectedNft.description}</p>
             <p className="selectednft-image-desc">token_hash: {selectedNft.token_hash}</p>
         </div>
     </div>
