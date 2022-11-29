@@ -10,7 +10,7 @@ function NftDetails() {
   };
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
-
+ 
   const image = "";
   console.log(selectedNft);
   console.log(image);
