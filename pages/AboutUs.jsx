@@ -2,29 +2,12 @@ import { Stack } from "@mui/system";
 import { Button } from "@mui/material";
 import Profile from "../components/Profile";
 import { useRouter } from "next/router";
+import Header from "../components/Header";
 
 function AboutUs() {
-  const router = useRouter();
-
-  const routeHome = () => {
-    router.push("./");
-  };
-
-  const routeHow = () => {
-    router.push("/HowItWorks");
-  };
-
   return (
     <>
-      <Stack className="header" direction="row" spacing={4}>
-        <Button className="btn-landing font colorfont" onClick={routeHome}>
-          Home
-        </Button>
-        <Button className="btn-landing font colorfont onPage">About us</Button>
-        <Button className="btn-landing font colorfont" onClick={routeHow}>
-          How it works
-        </Button>
-      </Stack>
+      <Header selected={"aboutUs"} />
       <div className="font aboutus-title">About us</div>
       <Stack direction="row" spacing={10}>
         <p className="font aboutus">

@@ -7,6 +7,7 @@
 function Nft() {
   return <div></div>;
 }
+//vicky te comente todo porque falla el build y sino no podia verificar lo del styling al estar buildeado
 // function Nft() {
 //
 //   const backHandler = () => {
