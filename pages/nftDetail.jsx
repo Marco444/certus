@@ -4,6 +4,9 @@
 // import selectedNftContext from "../components/selectedNftContext";
 // import { Grid } from "@mui/material";
 //
+function Nft() {
+  return <div></div>;
+}
 // function Nft() {
 //
 //   const backHandler = () => {
@@ -60,5 +63,5 @@
 //     </div>
 //   );
 // }
-//  export default  Nft;
+export default Nft;
 //
