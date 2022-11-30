@@ -66,20 +66,6 @@ p font-family helvetica {
   border: 8px;
 }
 
-.selectednft-image{
-  max-width:100%;
-  height:20em;
-  width:20em;
-  border: 8px;
-  margin-left:2%;
-}
-
-.selectednft-image-desc{
-  margin:2%;
-  font-size: 150%;
-  font-weight: normal;
-}
-
 .icons-btn {
   justify-content: right;
 }
@@ -398,3 +384,45 @@ p font-family helvetica {
   font-size: 20px;
 }
 
+/* nftdetail */
+.nft-detail{
+  margin-left: 5%;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.details{
+  margin-left: 40px;
+}
+
+.nft-title{
+  font-size: 250%;
+  font-weight: normal;
+}
+
+.subtitile{
+  font-size: 150%;
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+}
+
+.attr-item{
+  margin-left: 30px;
+  font-size: 105%;
+  font-weight: normal;
+}
+
+.subitem{
+  text-decoration: none;
+  font-size: 80%;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.page-title{
+  fontFamily: "Bebas Neue";
+  fontSize: 50
+}

@@ -9,12 +9,11 @@ import selectedNftContext from "./selectedNftContext";
 
 function NftCard({ metadata }) {
 
-
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   const handleClick = () => {
     setSelectedNft(metadata);
-    router.push("/nft");
+    router.push("/nftDetail");
   };
 
   const image_split = metadata.image.split('/');
