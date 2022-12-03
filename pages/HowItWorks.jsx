@@ -7,10 +7,10 @@ import UserContext from "../components/userContext";
 
 function HowItWorks () {
 
-    const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
+   // const [isAuthenticated, authenticate, user, logout] = useContext(UserContext);
 
     const authenticateHandler = async () => {
-        await authenticate();
+       // await authenticate();
         router.push("/nfts");
     };
 

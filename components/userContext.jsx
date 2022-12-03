@@ -9,6 +9,7 @@ export const UserProvider = ({ children }) => {
   const [userAddress, setUserAddress] = useState("");
 
   return (
+      //esta comentada rompia todo
     // <UserContext.Provider value={[isAuthenticated, authenticate, user,logout, userAddress, setUserAddress, account]}>
     <UserContext.Provider value={[userAddress, setUserAddress]}>
       {children}

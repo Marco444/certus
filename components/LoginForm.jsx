@@ -25,13 +25,8 @@ export default function LoginForm() {
   };
 
   const [
-    isAuthenticated,
-    authenticate,
-    user,
-    logout,
     userAddress,
     setUserAddress,
-    account
   ] = useContext(UserContext);
 
   const [email, setEmail] = useState("");
@@ -46,13 +41,13 @@ export default function LoginForm() {
     setPassword(e.target.value);
   };
 
-  const handleMetamask = async () => {
-    await authenticate();
-    if (isAuthenticated && user !== null) {
-      setUserAddress(user.attributes.accounts[0]);
-      router.push("./nfts");
-    }
-  };
+  // const handleMetamask = async () => {
+  //   await authenticate();
+  //   if (isAuthenticated && user !== null) {
+  //     setUserAddress(user.attributes.accounts[0]);
+  //     router.push("./nfts");
+  //   }
+  // };
 
   const handleLogin = async () => {
     if (email === "" ) return;
@@ -95,14 +90,14 @@ export default function LoginForm() {
         <Button sx={buttonSx} onClick={handleLogin}>
           Create Wallet
         </Button>
-        <Button onClick={handleMetamask} sx={{...buttonSx, marginTop: 2, marginLeft: 2}}>
-          <img
-            src="/metamask.jpg"
-            alt="metamask"
-            height="50"
-            width="50"
-          />
-        </Button>
+        {/*<Button onClick={handleMetamask} sx={{...buttonSx, marginTop: 2, marginLeft: 2}}>*/}
+        {/*  <img*/}
+        {/*    src="/metamask.jpg"*/}
+        {/*    alt="metamask"*/}
+        {/*    height="50"*/}
+        {/*    width="50"*/}
+        {/*  />*/}
+        {/*</Button>*/}
       </Stack>
     </Stack>
   );

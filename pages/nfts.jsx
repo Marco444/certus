@@ -12,6 +12,7 @@ import { router } from "next/router";
 import { Stack } from "@mui/system";
 
 import { useMediaQuery } from 'react-responsive'
+import WalletBalance from "../components/WalletBalance";
 
 function Nfts() {
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
@@ -19,10 +20,6 @@ function Nfts() {
   const isMobile = useMediaQuery({ maxWidth: 767 })
 
     const [
-        isAuthenticated,
-        authenticate,
-        user,
-        logout,
         userAddress,
         setUserAddress,
     ] = useContext(UserContext);
@@ -54,7 +51,7 @@ function Nfts() {
   if(!canMint){
     return(
     <>
-        <NFTBalances />
+        <WalletBalance />
         <Stack sx={{padding: 2, margin: 3}} spacing={4} direction={"row"} >
             <div style={{fontFamily: "Bebas Neue", fontSize: 35}}>
               MY COLLECTION

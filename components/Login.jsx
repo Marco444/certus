@@ -10,8 +10,8 @@ const Login = ({ authenticate,logout }) => {
 
     const [showModal, setShowModal] = useState(false);
     const handleOpen = () => {
-        // setShowModal(true);
-        router.push("./nfts");
+        setShowModal(true);
+        //router.push("./nfts");
     }
 
     const handleClose = () => {
