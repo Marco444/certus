@@ -8,15 +8,6 @@ import LoginForm from "../components/LoginForm";
 import Header from "../components/Header";
 
 const Home = () => {
-  const [
-    isAuthenticated,
-    authenticate,
-    user,
-    logout,
-    userAddress,
-    setUserAddress,
-  ] = useContext(UserContext);
-
 
   return (
     <>
