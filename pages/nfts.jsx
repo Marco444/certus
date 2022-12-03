@@ -45,35 +45,74 @@ function Nfts() {
     router.push("./");
   }
 
+  let canMint = true;
 
+  const myProducts = () => {
+    router.push("./myProducts");
+  }
 
+  if(!canMint){
+    return(
+    <>
+        <NFTBalances />
+        <Stack sx={{padding: 2, margin: 3}} spacing={4} direction={"row"} >
+            <div style={{fontFamily: "Bebas Neue", fontSize: 35}}>
+              MY COLLECTION
+            </div>
+            <Button startIcon={<ContentCopyIcon />} onClick={() => navigator.clipboard.writeText(userAddress)}>
+                copy wallet address
+            </Button>
+        </Stack>
+        <Grid container spacing={5} >
+            {nfts.map(function (res) {
+                if(res.metadata != null)
+                    return (
+                        <Grid item>
+                            <NftCard key={res.token_hash} metadata={res} />
+                        </Grid>
+                    );
+            })}
+        </Grid>
+        <Button onClick={logouthandler} className="logout-btn">
+            {" "}
+            LOG OUT{" "}
+        </Button>
+    </>
+  );}
+else{
   return (
-      <>
-          <NFTBalances />
-          <Stack sx={{padding: 2, margin: 3}} spacing={4} direction={"row"} >
-              <div style={{fontFamily: "Bebas Neue", fontSize: 50}}>
-                  MY PRODUCTS
-              </div>
-              <Button startIcon={<ContentCopyIcon />} onClick={() => navigator.clipboard.writeText(userAddress)}>
-                  copy wallet address
-              </Button>
-          </Stack>
-          <Grid container spacing={5} >
-              {nfts.map(function (res) {
-                  if(res.metadata != null)
-                      return (
-                          <Grid item>
-                              <NftCard key={res.token_hash} metadata={res} />
-                          </Grid>
-                      );
-              })}
-          </Grid>
-          <Button onClick={logouthandler} className="logout-btn">
-              {" "}
-              LOG OUT{" "}
-          </Button>
-      </>
-  );
+    <>
+    <NFTBalances />
+    <Stack sx={{padding: 2, margin: 3}} spacing={4} direction={"row"} >
+        <button style={{fontFamily: "Bebas Neue", fontSize: 35, backgroundColor: "#11e3ab",border:"none",borderRadius:8}}>
+            MY COLLECTION
+        </button>
+        <button style={{fontFamily: "Bebas Neue", fontSize: 35, textDecoration: "underline",border:"none",backgroundColor:"white"}} onClick = {myProducts}>
+            MY PRODUCTS
+        </button>
+        <div style={{fontFamily: "Bebas Neue", fontSize: 35, textDecoration: "underline"}}>
+            Create new product
+        </div>
+        <Button startIcon={<ContentCopyIcon />} onClick={() => navigator.clipboard.writeText(userAddress)}>
+            copy wallet address
+        </Button>
+    </Stack>
+    <Grid container spacing={5} >
+        {nfts.map(function (res) {
+            if(res.metadata != null)
+                return (
+                    <Grid item>
+                        <NftCard key={res.token_hash} metadata={res} />
+                    </Grid>
+                );
+        })}
+    </Grid>
+    <Button onClick={logouthandler} className="logout-btn">
+        {" "}
+        LOG OUT{" "}
+    </Button>
+</>
+)}
 }
 
 export default Nfts;

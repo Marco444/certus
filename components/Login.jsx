@@ -3,13 +3,15 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import LoginForm from "./LoginForm"
 import {useState} from "react";
 import {Modal} from "@mui/material";
+import { router } from "next/router";
 
 const Login = ({ authenticate,logout }) => {
 
 
     const [showModal, setShowModal] = useState(false);
     const handleOpen = () => {
-        setShowModal(true);
+        // setShowModal(true);
+        router.push("./nfts");
     }
 
     const handleClose = () => {

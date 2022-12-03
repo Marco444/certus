@@ -9,12 +9,12 @@ import { SelectedNftProvider } from "../components/selectedNftContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <MoralisProvider
-            // serverUrl="https://rbhdqxxttltw.grandmoralis.com:2053/server"
-            serverUrl="https://9tjvaum3lnqq.usemoralis.com:2053/server"
-            // appId="XemYMntKGORFuirwocwynIuZK4QSBcZBU3Sfxynk"
-            appId="ZCbbNH3Gop15IRPio3BTR5nGHI4Jc5yeXLKMUG9N"
-        >
+        // <MoralisProvider
+        //     // serverUrl="https://rbhdqxxttltw.grandmoralis.com:2053/server"
+        //     serverUrl="https://9tjvaum3lnqq.usemoralis.com:2053/server"
+        //     // appId="XemYMntKGORFuirwocwynIuZK4QSBcZBU3Sfxynk"
+        //     appId="ZCbbNH3Gop15IRPio3BTR5nGHI4Jc5yeXLKMUG9N"
+        // >
             <UserProvider>
                 <NftBalanceProvider>
                     <SelectedNftProvider>
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     </SelectedNftProvider>
                 </NftBalanceProvider>
             </UserProvider>
-        </MoralisProvider>
+        // </MoralisProvider>
     );
 }
 

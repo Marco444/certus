@@ -33,30 +33,32 @@ function Nft() {
   console.log(metadata);
 
   return (
-    <div>
-        <div >
-            <ArrowBackIcon onClick={backHandler} className="backarrow colorfont"/>
-        </div>
-        <div style={{fontFamily: "Bebas Neue", fontSize: 50, marginLeft: 70, marginTop: 20, marginBottom: -20}}>Page title</div>
-        <div className="nft-detail">
-            <img src={"https://ipfs.io/ipfs/" + image} className="selectednft-image" ></img>
-            <div className="details">
-              <h1 className="nft-title font">{metadata.name}</h1>
-              <h3 className="subtitile font">Attributes:</h3>
-              <Grid container spacing={3}>
-                {metadata.attributes.map(attr => {
-                  if(attr.trait_type == 'Background' || attr.trait_type == 'Flair')
-                  return (
-                    <Grid item className="attr-item font"> {attr.value} </Grid>
-                  )
-                })}
-              </Grid>
-              <h3 className="subtitile font">Model: <div className="subitem font">{model}</div></h3>
-              <h3 className="subtitile font">Brand: <div className="subitem font">{brand}</div></h3>
-              <h3 className="subtitile font">Description: <div className="subitem font">{metadata.description}</div></h3>
-            </div>
-        </div>
-    </div>
+    <>
+      <div className="nft-detail-page">
+          <div >
+              <ArrowBackIcon onClick={backHandler} className="backarrow"/>
+          </div>
+          <div style={{fontFamily: "Bebas Neue", fontSize: 50, marginLeft: 70, marginTop: 27, marginBottom: -20}}>Page title</div>
+          <div className="nft-detail">
+              <img src={"https://ipfs.io/ipfs/" + image} className="selectednft-image" ></img>
+              <div className="details">
+                <h1 className="nft-title font">{metadata.name}</h1>
+                <h3 className="subtitile font">Attributes:</h3>
+                <Grid container spacing={3}>
+                  {metadata.attributes.map(attr => {
+                    if(attr.trait_type == 'Background' || attr.trait_type == 'Flair')
+                    return (
+                      <Grid item className="attr-item font"> {attr.value} </Grid>
+                    )
+                  })}
+                </Grid>
+                <h3 className="subtitile font">Model: <div className="subitem font">{model}</div></h3>
+                <h3 className="subtitile font">Brand: <div className="subitem font">{brand}</div></h3>
+                <h3 className="subtitile font">Description: <div className="subitem font">{metadata.description}</div></h3>
+              </div>
+          </div>
+      </div>
+    </>
   );
 }
  export default  Nft;
