@@ -21,6 +21,7 @@ function WalletBalance() {
         async function loadNfts() {
             const nfts = await alchemy.nft.getNftsForOwner(userAddress)
             setNftBalance(nfts.ownedNfts)
+            console.log(nfts.ownedNfts)
         }
       loadNfts()
      }, [])
