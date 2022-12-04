@@ -35,8 +35,6 @@ export default function LoginForm() {
     setEmail(e.target.value);
   };
 
-
-
   const handleLogin = async () => {
     if (email === "" ) return;
 

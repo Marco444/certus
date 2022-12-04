@@ -1350,9 +1350,9 @@
   integrity sha512-Rk4SkJFaXZiznFyC/t77Q0NKS4FL7TLJJsVG2V2oiEq3kJVeTdxysEe/yRWSpnWMe808XRDJ+VFh5pt/FN5plw==
 
 "@noble/hashes@^1.1.2":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.1.3.tgz#360afc77610e0a61f3417e497dcf36862e4f8111"
-  integrity sha512-CE0FCR57H2acVI5UOzIGSSIYxZ6v/HOhDR0Ro9VLyhnzLwx0o8W1mmgaqlEUx4049qJDlIBRztv5k+MM8vbO3A==
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.1.4.tgz#2611ebf5764c1bf754da7c7794de4fb30512336d"
+  integrity sha512-+PYsVPrTSqtVjatKt2A/Proukn2Yrz61OBThOCKErc5w2/r1Fh37vbDv0Eah7pyNltrmacjwTvdw3JoR+WE4TA==
 
 "@noble/secp256k1@^1.6.3":
   version "1.7.0"
@@ -2546,9 +2546,9 @@ bigint-buffer@^1.1.5:
     bindings "^1.3.0"
 
 bignumber.js@^9.0.0, bignumber.js@^9.0.2, bignumber.js@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.0.tgz#8d340146107fe3a6cb8d40699643c302e8773b62"
-  integrity sha512-4LwHK4nfDOraBCtst+wOWIHbu1vhvAPJK8g8nROd4iuc3PSEjWif/qwbkh8jwCJz6yDBvtU4KPynETgrfh7y3A==
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.1.1.tgz#c4df7dc496bd849d4c9464344c1aa74228b4dac6"
+  integrity sha512-pHm4LsMJ6lzgNGVfZHjMoO8sdoRhOzOH4MLmY65Jg70bpxCKu5iOHNJyfF6OyvYw7t8Fpf35RuzUyqnQsj8Vig==
 
 bindings@^1.3.0, bindings@^1.5.0:
   version "1.5.0"
@@ -5408,9 +5408,9 @@ merkle-patricia-tree@^2.1.2, merkle-patricia-tree@^2.3.2:
     semaphore ">=1.0.1"
 
 metamask-react@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/metamask-react/-/metamask-react-2.4.0.tgz#5df0476a6df8fa6959c5253f2ee67c274453128d"
-  integrity sha512-dQDu8aop89iZjvjldCXnEEASgbACCeyBeylqVTPgqVurHIFB666NTNfteiQstzVYg0k3vyup+FNgqNF9g2/0WA==
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/metamask-react/-/metamask-react-2.4.1.tgz#97a96af1c9e36e9e9e118efb26709015d5b7feaa"
+  integrity sha512-0eACYVsqqBkrDMkUbVr43ExvZTPNVibnC8l6HNzO8yrewWE2WJW50oTJX1b1i3KqvkLWU693BTVTeMinCvJc4g==
 
 methods@~1.1.2:
   version "1.1.2"
