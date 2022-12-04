@@ -16,32 +16,12 @@ import WalletBalance from "../components/WalletBalances";
 
 function Nfts() {
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
-  const [nfts, setNfts] = useState([]);
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  //const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [
     userAddress,
     setUserAddress,
   ] = useContext(UserContext);
-
-  const storeNfts = () => {
-    if (
-      nftBalance === undefined ||
-      nftBalance === null ||
-      nftBalance.result === null ||
-      nftBalance.result === undefined
-    )
-      return null;
-    setNfts(nftBalance);
-  };
-
-  useEffect(() => {
-    storeNfts(nftBalance);
-  }, []);
-
-  const logouthandler = () => {
-    router.push("./");
-  };
 
   return (
     <>
@@ -58,16 +38,14 @@ function Nfts() {
         </Button>
       </Stack>
       <Grid container spacing={5}>
-        {nfts.map(function (res) {
-            return (
-              <Grid item>
-                <NftCard key={res.tokenUri.raw} metadata={res} />
-              </Grid>
-            );
+        {nftBalance.map( (res) => {
+            return (<Grid item>
+                <NftCard key={res.tokenUri.raw} nft={res}/>
+            </Grid>);
         })}
       </Grid>
       <Button
-        onClick={logouthandler}
+        onClick={() => {router.push("./")}}
         sx={{
           position: "fixed",
           top: 2,

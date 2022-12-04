@@ -7,24 +7,24 @@ import {useContext} from "react";
 import NftBalanceContext from "./nftBalancesContext";
 import selectedNftContext from "./selectedNftContext";
 
-function NftCard({ metadata2 }) {
+function NftCard({ nft }) {
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
-  const metadata = metadata2.rawMetadata
+  console.log(nft)
 
   const handleClick = () => {
     setSelectedNft(metadata);
     router.push("/nftDetail");
   };
 
-  const image_split = metadata.image.split('/');
-  let image = "";
-  if(image_split.length > 1){
-    image = image_split.at(-2)+'/'+image_split.at(-1);
-  } else {
-    image = metadata.image;
-  }
+  // const image_split = metadata.image.split('/');
+  // let image = "";
+  // if(image_split.length > 1){
+  //   image = image_split.at(-2)+'/'+image_split.at(-1);
+  // } else {
+  //   image = metadata.image;
+  // }
 
   return (
     <>
@@ -32,16 +32,14 @@ function NftCard({ metadata2 }) {
         <div className="card">
           <img
             className="card-image"
-            src={"https://ipfs.io/ipfs/" + image}
+            src={"https://ipfs.io/ipfs/" + nft.rawMetadata.image}
           />
           <div className="card-info">
             <h1 className="card-title">
-              {metadata.metadata === null ? null : metadata.metadata.name}
+              { nft.rawMetadata.name}
             </h1>
             <div>
-              {metadata.metadata === null
-                ? null
-                : metadata.metadata.description}
+              {nft.description}
             </div>
           </div>
         </div>
