@@ -32,12 +32,12 @@ function Nfts() {
       nftBalance.result === undefined
     )
       return null;
-    setNfts(nftBalance.result);
+    setNfts(nftBalance);
   };
 
   useEffect(() => {
     storeNfts(nftBalance);
-  }, [nftBalance]);
+  }, []);
 
   const logouthandler = () => {
     router.push("./");
@@ -59,10 +59,9 @@ function Nfts() {
       </Stack>
       <Grid container spacing={5}>
         {nfts.map(function (res) {
-          if (res.metadata != null)
             return (
               <Grid item>
-                <NftCard key={res.token_hash} metadata={res} />
+                <NftCard key={res.tokenUri.raw} metadata={res} />
               </Grid>
             );
         })}
@@ -80,8 +79,7 @@ function Nfts() {
           fontSize: 14,
         }}
       >
-        {" "}
-        LOG OUT{" "}
+        LOG OUT
       </Button>
     </>
   );

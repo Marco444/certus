@@ -19,6 +19,7 @@
     "@mui/system": "^5.10.6",
     "@walletconnect/web3-provider": "^1.8.0",
     "@web3auth/web3auth": "^2.1.2",
+    "alchemy-sdk": "^2.2.3",
     "ethers": "^5.7.2",
     "magic-sdk": "^10.0.0",
     "metamask-react": "^2.4.0",

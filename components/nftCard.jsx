@@ -7,9 +7,11 @@ import {useContext} from "react";
 import NftBalanceContext from "./nftBalancesContext";
 import selectedNftContext from "./selectedNftContext";
 
-function NftCard({ metadata }) {
+function NftCard({ metadata2 }) {
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
+
+  const metadata = metadata2.rawMetadata
 
   const handleClick = () => {
     setSelectedNft(metadata);
