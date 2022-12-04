@@ -259,6 +259,15 @@ p font-family helvetica {
   margin-bottom: 4%;
 }
 
+.card-id{
+  display: flex;
+  text-align: left;
+}
+
+.card-tokenid{
+  margin-left: 1.5%
+}
+
 /* landing */
 .landing {
   text-align: left;

@@ -1,4 +1,3 @@
-import { useMoralis } from "react-moralis";
 import { createContext, useState } from 'react';
 
 const UserContext = createContext();

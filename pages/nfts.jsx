@@ -23,6 +23,8 @@ function Nfts() {
     setUserAddress,
   ] = useContext(UserContext);
 
+  console.log(nftBalance);
+
   return (
     <>
       <WalletBalance />
@@ -38,8 +40,8 @@ function Nfts() {
         </Button>
       </Stack>
       <Grid container spacing={5}>
-        {nftBalance.map( (res) => {
-            return (<Grid item>
+        {nftBalance.map( (index,res) => {
+            return (<Grid key={index} item>
                 <NftCard key={res.tokenUri.raw} nft={res}/>
             </Grid>);
         })}

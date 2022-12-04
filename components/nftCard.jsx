@@ -7,7 +7,7 @@ import {useContext} from "react";
 import NftBalanceContext from "./nftBalancesContext";
 import selectedNftContext from "./selectedNftContext";
 
-function NftCard({ nft }) {
+function NftCard({ key,nft }) {
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
@@ -18,13 +18,6 @@ function NftCard({ nft }) {
     router.push("/nftDetail");
   };
 
-  // const image_split = metadata.image.split('/');
-  // let image = "";
-  // if(image_split.length > 1){
-  //   image = image_split.at(-2)+'/'+image_split.at(-1);
-  // } else {
-  //   image = metadata.image;
-  // }
 
   return (
     <>
@@ -38,6 +31,7 @@ function NftCard({ nft }) {
             <h1 className="card-title">
               { nft.rawMetadata.name}
             </h1>
+            <div className="card-id">ID: <div className="tokenid">{nft.tokenId}</div></div>
             <div>
               {nft.description}
             </div>
