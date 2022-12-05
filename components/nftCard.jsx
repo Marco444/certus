@@ -31,7 +31,7 @@ function NftCard({ key,nft }) {
             <h1 className="card-title">
               { nft.rawMetadata.name}
             </h1>
-            <div className="card-id">ID: <div className="tokenid">{nft.tokenId}</div></div>
+            <div className="card-id">ID: <div className="card-tokenid">{nft.tokenId}</div></div>
             <div>
               {nft.description}
             </div>

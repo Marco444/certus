@@ -40,7 +40,7 @@ function Nfts() {
         </Button>
       </Stack>
       <Grid container spacing={5}>
-        {nftBalance.map( (index,res) => {
+        {nftBalance.map( (res,index) => {
             return (<Grid key={index} item>
                 <NftCard key={res.tokenUri.raw} nft={res}/>
             </Grid>);
