@@ -6,7 +6,10 @@
 - Ofrecer una interfaz de producto clara e intuitiva
   == webapp que permite ver las nfts vinculadas
   == metodo intuitivo y simple para obtener una nft de la compra de un producto
+  == interfaz para
 
 - Poder resolver la falsificacion de un negocio en particular 
   == hacer contacto con una empresa para testear el producto.
   ==
+
+-

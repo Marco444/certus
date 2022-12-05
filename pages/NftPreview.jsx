@@ -18,9 +18,9 @@ function NftPreview() {
   var brand = "";
 
   selectedNft.rawMetadata.attributes.forEach(element => {
-    if(element.trait_type == 'Model')
+    if(element.trait_type === 'Model')
       model = element.value
-    if(element.trait_type == 'Brand')
+    if(element.trait_type === 'Brand')
       brand = element.value
   });
   console.log(selectedNft);
@@ -31,7 +31,7 @@ function NftPreview() {
         <div >
             <ArrowBackIcon onClick={backHandler} className="backarrow colorfont"/>
         </div>
-        <div style={{fontFamily: "Bebas Neue", fontSize: 50, marginLeft: 70, marginTop: 20, marginBottom: -20}}>Page title</div>
+        <div style={{fontFamily: "Bebas Neue", fontSize: 50, marginLeft: 70, marginTop: 20, marginBottom: -20}}>NFT details</div>
         <div className="nft-detail">
             <img src={"https://ipfs.io/ipfs/" + selectedNft.rawMetadata.image} className="selectednft-image" ></img>
             <div className="details">
