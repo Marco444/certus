@@ -431,4 +431,6 @@ p font-family helvetica {
   margin-top: 3px;
 }
 
-
+.selectednft-image{
+  border-radius: 12%
+}

@@ -23,7 +23,7 @@ function Nfts() {
     setUserAddress,
   ] = useContext(UserContext);
 
-  console.log(nftBalance);
+//   console.log(nftBalance);
 
   return (
     <>

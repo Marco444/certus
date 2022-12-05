@@ -7,14 +7,12 @@ import {useContext} from "react";
 import NftBalanceContext from "./nftBalancesContext";
 import selectedNftContext from "./selectedNftContext";
 
-function NftCard({ key,nft }) {
+function NftCard({ nft }) {
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
-  console.log(nft)
-
   const handleClick = () => {
-    setSelectedNft(metadata);
+    setSelectedNft(nft);
     router.push("/nftDetail");
   };
 
