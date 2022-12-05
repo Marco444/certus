@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import UserContext from "./userContext";
 import { router } from "next/router";
 import { Box, Stack } from "@mui/system";
-import { Button, TextField } from "@mui/material";
+import {Alert, Button, CircularProgress, TextField} from "@mui/material";
 import Image from "next/image";
 
 export default function LoginForm() {
@@ -30,6 +30,7 @@ export default function LoginForm() {
   ] = useContext(UserContext);
 
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -38,6 +39,7 @@ export default function LoginForm() {
   const handleLogin = async () => {
     if (email === "" ) return;
 
+    setLoading(true)
     const magic = new Magic("pk_live_23C0853E32B9B729", {
       network: customNodeOptions,
     });
@@ -54,29 +56,27 @@ export default function LoginForm() {
 
     setUserAddress(address);
 
-    console.log(address);
-
     router.push("./nfts");
   };
   return (
     <Stack
       sx={{
-        borderRadius: 5,
         padding: 5,
         margin: "auto",
         backgroundColor: "white",
         fontFamily: "Bebas Neue"
       }}
-      style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}
-    >
+      style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
 
       <h1 > Access Certus</h1>
-      <TextField sx={{marginBottom: 3}} label="Email" value={email} onChange={handleEmail} />
-      <Stack direction="row" sx={{ justifyContent: "center" }}>
+      <TextField  label="Email" value={email} onChange={handleEmail} />
         <Button sx={buttonSx} onClick={handleLogin}>
-          Create Wallet
+          Access
         </Button>
-      </Stack>
+      {!loading && <Alert severity="info" sx={{width: 200, borderRadius: 5, marginTop: 2}}>
+          If you don't have an account this will create one, and if you have one then you will log in!
+        </Alert> }
+      {loading && <CircularProgress sx={{marginTop: 2}}/> }
     </Stack>
   );
 }
