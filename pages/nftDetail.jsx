@@ -7,19 +7,12 @@ import { Grid } from "@mui/material";
 function Nft() {
 
   const backHandler = () => {
-    router.push("/nfts");
+    router.push("./nfts");
   };
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
   const metadata = selectedNft;
-  // const image_split = metadata.image.split('/');
-  // let image = "";
-  // if(image_split.length > 1){
-  //   image = image_split.at(-2)+'/'+image_split.at(-1);
-  // } else {
-  //   image = metadata.image;
-  // }
 
   var model = "";
   var brand = "";

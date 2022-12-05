@@ -13,7 +13,7 @@ function NftCard({ nft }) {
 
   const handleClick = () => {
     setSelectedNft(nft);
-    router.push("/nftDetail");
+    router.push("./nftDetail");
   };
 
 
