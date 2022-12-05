@@ -8,12 +8,12 @@ function AboutUs() {
       <Header selected={"aboutUs"} />
       <div className="font aboutus-title">About us</div>
       <Stack direction="row" spacing={10}>
-        <p className="font aboutus">
+        <p className="fontText aboutus">
           We are a group of software engineer students at ITBA. Certus is a
           platform dedicated to certify the authenticity of goods and services
           with the mission of reducing illegal copies and imitations. Here you
           will be able to visualize all your NFTs regarding the products that
-          you own. But first there are a couple things to do, please checkout
+          you own.
         </p>
         <img className="logo" src="./images/logo.png" />
       </Stack>

@@ -12,7 +12,11 @@ p font-family helvetica {
 }
 
 .font {
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Bebas Neue", monospace;
+}
+
+.fontText {
+  font-family: "Roboto Thin", monospace;
 }
 
 /* nft */
