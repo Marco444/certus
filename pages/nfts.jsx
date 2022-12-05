@@ -50,8 +50,8 @@ function Nfts() {
         onClick={() => {router.push("./")}}
         sx={{
           position: "fixed",
-          top: 2,
-          right: 2,
+          top: 10,
+          right: 10,
           backgroundColor: "red",
           textAlign: "center",
           color: "white",
