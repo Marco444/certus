@@ -74,7 +74,7 @@ export default function LoginForm() {
           Access
         </Button>
       {!loading && <Alert severity="info" sx={{width: 200, borderRadius: 5, marginTop: 2}}>
-          If you don't have an account this will create one, and if you have one then you will log in!
+          If you do not have an account this will create one, and if you have one then you will log in!
         </Alert> }
       {loading && <CircularProgress sx={{marginTop: 2}}/> }
     </Stack>
