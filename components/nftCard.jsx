@@ -9,10 +9,10 @@ function NftCard({ nft }) {
 
   const [selectedNft, setSelectedNft] = useContext(selectedNftContext);
 
-  // const handleClick = () => {
-  //   setSelectedNft(nft);
-  //   router.push('./NftPreview');
-  // };
+  const handleClick = () => {
+    setSelectedNft(nft);
+    router.push('./NftPreview');
+  };
 
   return (
     <>
