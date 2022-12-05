@@ -6,7 +6,6 @@ import {Modal} from "@mui/material";
 
 const Login = ({ authenticate,logout }) => {
 
-
     const [showModal, setShowModal] = useState(false);
     const handleOpen = () => {
         setShowModal(true);

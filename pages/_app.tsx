@@ -5,7 +5,6 @@ import { UserProvider } from "../components/userContext";
 import { NftBalanceProvider } from "../components/nftBalancesContext";
 import { SelectedNftProvider } from "../components/selectedNftContext";
 
-
 function MyApp({ Component, pageProps }: AppProps) {
     return (
             <UserProvider>

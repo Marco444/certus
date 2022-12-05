@@ -1,16 +1,6 @@
-import { Stack } from "@mui/system";
-import { Button } from "@mui/material";
-import { useRouter } from "next/router";
-import Login from "../components/Login";
-import { useContext } from "react";
-import UserContext from "../components/userContext";
 import Header from "../components/Header";
 
 function HowItWorks() {
-
-  const authenticateHandler = async () => {
-    router.push("/nfts");
-  };
 
   return (
     <>

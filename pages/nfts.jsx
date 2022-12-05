@@ -1,29 +1,20 @@
-import { useEffect, useState } from "react";
-
 import { useContext } from "react";
 import UserContext from "../components/userContext";
 import NftBalanceContext from "../components/nftBalancesContext";
-
-import NFTBalances from "../components/nftBalances";
 import NftCard from "../components/nftCard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Button, Grid } from "@mui/material";
 import { router } from "next/router";
 import { Stack } from "@mui/system";
-
-import { useMediaQuery } from "react-responsive";
 import WalletBalance from "../components/WalletBalances";
 
 function Nfts() {
   const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
-  //const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [
     userAddress,
     setUserAddress,
   ] = useContext(UserContext);
-
-//   console.log(nftBalance);
 
   return (
     <>
