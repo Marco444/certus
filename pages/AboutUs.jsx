@@ -1,7 +1,5 @@
 import { Stack } from "@mui/system";
-import { Button } from "@mui/material";
 import Profile from "../components/Profile";
-import { useRouter } from "next/router";
 import Header from "../components/Header";
 
 function AboutUs() {

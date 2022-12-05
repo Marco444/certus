@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const SelectedNftContext = createContext();
 
 export const SelectedNftProvider = ({ children }) => {
-    const [selectedNft, setSelectedNft] = useState({});
+    const [selectedNft, setSelectedNft] = useState({rawMetadata:{attributes : []}});
 
     return (
         <SelectedNftContext.Provider value={[selectedNft, setSelectedNft]}>
