@@ -6,7 +6,7 @@ import { Network, Alchemy } from "alchemy-sdk";
 
 function WalletBalance() {
 
-    const [userAddress, setUserAddress,] = useContext(UserContext);
+    const [userAddress, setUserAddress] = useContext(UserContext);
     const [nftBalance, setNftBalance] = useContext(NftBalanceContext);
 
     const settings = {
@@ -16,10 +16,15 @@ function WalletBalance() {
 
     const alchemy = new Alchemy(settings);
 
+    useEffect(() => setUserAddress(localStorage.getItem("userWallet")))
+
     useEffect( () => {
 
+
+
         async function loadNfts() {
-            const nfts = await alchemy.nft.getNftsForOwner(userAddress)
+            console.log(localStorage.getItem('userWallet'))
+            const nfts = await alchemy.nft.getNftsForOwner(localStorage.getItem('userWallet'))
             setNftBalance(nfts.ownedNfts)
         }
       loadNfts()

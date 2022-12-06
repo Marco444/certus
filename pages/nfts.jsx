@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import {useContext, useEffect} from "react";
 import UserContext from "../components/userContext";
 import NftBalanceContext from "../components/nftBalancesContext";
 import NftCard from "../components/nftCard";
@@ -15,6 +15,9 @@ function Nfts() {
     userAddress,
     setUserAddress,
   ] = useContext(UserContext);
+
+    useEffect(() => setUserAddress(localStorage.getItem('userWallet')))
+
 
   return (
     <>

@@ -56,6 +56,7 @@ export default function LoginForm() {
 
     setUserAddress(address);
 
+    localStorage.setItem('userWallet', address)
     router.push("./nfts");
   };
   return (
